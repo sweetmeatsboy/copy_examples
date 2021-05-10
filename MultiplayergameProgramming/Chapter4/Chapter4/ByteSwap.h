@@ -91,3 +91,14 @@ public:
 		return TypeAliaser<uint64_t, T>(ret).Get();
 	}
 };
+
+template<typename T>
+class ByteSwapper<T, 8>
+{
+public :
+	T Swap(T _data) const
+	{
+		uint64_t ret = ByteSwap8(TypeAliaser<T, uint64_t>(_data).Get());
+		return TypeAliaser<uint64_t, T>(ret).Get();
+	}
+};

@@ -121,7 +121,7 @@ public :
 class Quaternion
 {
 public:
-	float mX, mY, mZ;
+	float mX, mY, mZ, mW;
 };
 
 template<int _val, int _bit>

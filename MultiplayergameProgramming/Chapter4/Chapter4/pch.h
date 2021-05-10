@@ -35,3 +35,5 @@ using namespace std;
 #include "RoboMath.h"
 
 #include "ByteSwap.h"
+
+#include "MemoryBitStream.h"

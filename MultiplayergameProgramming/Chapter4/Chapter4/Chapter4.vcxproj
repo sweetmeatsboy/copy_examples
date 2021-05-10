@@ -116,9 +116,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Chapter4.cpp" />
+    <ClCompile Include="MemoryBitStream.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ByteSwap.h" />
+    <ClInclude Include="MemoryBitStream.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RoboMath.h" />
   </ItemGroup>

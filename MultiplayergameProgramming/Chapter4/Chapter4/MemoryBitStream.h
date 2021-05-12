@@ -11,7 +11,6 @@ inline float ConvertFromFixed(uint32_t _no, float _min, float _precision)
 	return static_cast<float>(_no) * _precision + _min;
 }
 
-
 class OutputMemoryBitStream
 {
 private:
@@ -48,7 +47,10 @@ public:
 		WriteBits(&_data, _bitCnt);
 	}
 
-	void Write(bool _data);
+	void Write(bool _data)
+	{
+		WriteBits(&_data, 1);
+	}
 	void Write(const Vector3& _vect);
 	void Write(const Quaternion& _q);
 
@@ -107,7 +109,10 @@ public:
 
 	void ReadBits(uint8_t& _data, uint32_t _bitCnt);
 	void ReadBits(void* _data, uint32_t _bitCnt);
-	void ReadBytes(void* _data, uint32_t _byteCnt);
+	void ReadBytes(void* _data, uint32_t _byteCnt)
+	{
+		ReadBits(_data, _byteCnt << 8);
+	}
 
 	template<typename T>
 	void Read(T& _data, uint32_t _bitCnt = sizeof(T) * 8)

@@ -37,3 +37,6 @@ using namespace std;
 #include "ByteSwap.h"
 
 #include "MemoryBitStream.h"
+#include "LinkingContext.h"
+#include "MemoryStream.h"
+

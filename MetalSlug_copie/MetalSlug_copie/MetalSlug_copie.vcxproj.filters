@@ -39,6 +39,9 @@
     <ClInclude Include="RTTI.h">
       <Filter>GameEntity\RTTI</Filter>
     </ClInclude>
+    <ClInclude Include="Pt.h">
+      <Filter>Image\CustomStruct</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -52,6 +55,9 @@
     </ClCompile>
     <ClCompile Include="RTTI.cpp">
       <Filter>GameEntity\RTTI</Filter>
+    </ClCompile>
+    <ClCompile Include="Pt.cpp">
+      <Filter>Image\CustomStruct</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

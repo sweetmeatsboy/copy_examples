@@ -159,6 +159,7 @@
   <ItemGroup>
     <ClCompile Include="Define.cpp" />
     <ClCompile Include="MetalSlug_copie.cpp" />
+    <ClCompile Include="Pt.cpp" />
     <ClCompile Include="RTTI.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

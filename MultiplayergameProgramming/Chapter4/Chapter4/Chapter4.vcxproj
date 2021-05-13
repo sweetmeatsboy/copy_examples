@@ -116,11 +116,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Chapter4.cpp" />
+    <ClCompile Include="LinkingContext.cpp" />
     <ClCompile Include="MemoryBitStream.cpp" />
     <ClCompile Include="MemoryStream.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ByteSwap.h" />
+    <ClInclude Include="LinkingContext.h" />
     <ClInclude Include="MemoryBitStream.h" />
     <ClInclude Include="MemoryStream.h" />
     <ClInclude Include="pch.h" />

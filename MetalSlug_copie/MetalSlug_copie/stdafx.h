@@ -17,5 +17,30 @@
 #include <memory.h>
 #include <tchar.h>
 
+#include <stdlib.h>
+
+//stl관련 header들
+#include <list>
+#include <vector>
+#include <map>
+#include <string>
+#include <ctime>
+#include <cmath>
+#include <algorithm>
+#include <functional>
+
+
+//사운드
+#include <mmsystem.h>
+#include <dsound.h>
+#pragma comment(lib, "winmm.lib")
+#pragma comment(lib, "dsound.lib")
+
+#include <crtdbg.h>
+
+using namespace std;
 
 // 여기서 프로그램에 필요한 추가 헤더를 참조합니다.
+
+#include "MetalSlug_copie.h"
+

@@ -16,6 +16,9 @@
     <Filter Include="Define">
       <UniqueIdentifier>{a7c9aa58-7771-4f9e-acff-d8713bc47c51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEntity\RTTI">
+      <UniqueIdentifier>{d21cfccf-d6b9-41f1-a089-88ec9ba248f0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -33,6 +36,9 @@
     <ClInclude Include="Define.h">
       <Filter>Define</Filter>
     </ClInclude>
+    <ClInclude Include="RTTI.h">
+      <Filter>GameEntity\RTTI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -43,6 +49,9 @@
     </ClCompile>
     <ClCompile Include="Define.cpp">
       <Filter>Define</Filter>
+    </ClCompile>
+    <ClCompile Include="RTTI.cpp">
+      <Filter>GameEntity\RTTI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

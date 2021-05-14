@@ -123,6 +123,9 @@
     <ClInclude Include="ResourceMgr.h">
       <Filter>ResourceMgr</Filter>
     </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Image</Filter>
+    </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Image\Jo</Filter>
     </ClInclude>
@@ -169,6 +172,9 @@
     </ClCompile>
     <ClCompile Include="ResourceMgr.cpp">
       <Filter>ResourceMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Image</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Image\Jo</Filter>

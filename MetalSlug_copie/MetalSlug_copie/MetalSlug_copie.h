@@ -15,4 +15,9 @@
 
 #include "BitmapDC.h"
 #include "FrameDC.h"
-#include "AniDCSet.h"#include "Scene.h"#include "Scene.h"#include "Animate.h"
+#include "AniDCSet.h"
+
+#include "Scene.h"
+#include "Animate.h"
+
+#include "Sprite.h"

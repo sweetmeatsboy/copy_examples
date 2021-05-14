@@ -28,6 +28,54 @@
     <Filter Include="Image\CustomStruct">
       <UniqueIdentifier>{7f113d09-f17d-478b-a780-3f52572460a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEntity\Camera">
+      <UniqueIdentifier>{da5143f5-05c8-43b2-9fc2-3941bb536b7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object">
+      <UniqueIdentifier>{69ed1054-143f-4cc4-8dca-cf11c9932eb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\Bullet">
+      <UniqueIdentifier>{f7b56186-a597-45b7-ab56-134b706f8273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\Bullet\P_Bullet">
+      <UniqueIdentifier>{a29ac597-b9c7-4a87-87b9-ee6396c1c216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\Bullet\E_Bullet">
+      <UniqueIdentifier>{35deb50f-3dd3-4e2c-ab1e-e0312926600f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\W_Item">
+      <UniqueIdentifier>{154efd89-ffd0-48f2-b1c1-ed2454ec22ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\FrontGroundObject">
+      <UniqueIdentifier>{21cf448e-ef23-438f-ba48-ff9d7135ff3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\N_Item">
+      <UniqueIdentifier>{6f254465-7ab6-4412-ac29-8f695b007e43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\NormalObj">
+      <UniqueIdentifier>{ae0463ab-8fcc-4720-92a4-b391163ffd17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\Stage_1_OBJ">
+      <UniqueIdentifier>{7870d23f-707c-4ce8-881a-3d812dbf33f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image\FrameDC">
+      <UniqueIdentifier>{cb5f4d9e-653d-47b8-8c95-901960d86112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image\BitmapDC">
+      <UniqueIdentifier>{68b695e6-9f2d-4047-baf5-c4ca6cb72692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image\AniDCSet">
+      <UniqueIdentifier>{21769bf6-90ed-4f2a-b0aa-71e457ac836b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceMgr">
+      <UniqueIdentifier>{f31f29fa-21f6-47a4-8585-429127a1a56e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{af718ad0-abea-4280-8976-5fe75cf5e460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image\Jo">
+      <UniqueIdentifier>{7f923d4f-129f-4f3a-aca2-15fb755aeda5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -54,6 +102,36 @@
     <ClInclude Include="Pt.h">
       <Filter>Image\CustomStruct</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>GameEntity\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalObj.h">
+      <Filter>GameEntity\Object\NormalObj</Filter>
+    </ClInclude>
+    <ClInclude Include="Rc.h">
+      <Filter>Image\CustomStruct</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameDC.h">
+      <Filter>Image\FrameDC</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapDC.h">
+      <Filter>Image\BitmapDC</Filter>
+    </ClInclude>
+    <ClInclude Include="AniDCSet.h">
+      <Filter>Image\AniDCSet</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceMgr.h">
+      <Filter>ResourceMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Image\Jo</Filter>
+    </ClInclude>
+    <ClInclude Include="Animate.h">
+      <Filter>Image\Jo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -73,6 +151,36 @@
     </ClCompile>
     <ClCompile Include="Pt.cpp">
       <Filter>Image\CustomStruct</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>GameEntity\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalObj.cpp">
+      <Filter>GameEntity\Object\NormalObj</Filter>
+    </ClCompile>
+    <ClCompile Include="Rc.cpp">
+      <Filter>Image\CustomStruct</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameDC.cpp">
+      <Filter>Image\FrameDC</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapDC.cpp">
+      <Filter>Image\BitmapDC</Filter>
+    </ClCompile>
+    <ClCompile Include="AniDCSet.cpp">
+      <Filter>Image\AniDCSet</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceMgr.cpp">
+      <Filter>ResourceMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Image\Jo</Filter>
+    </ClCompile>
+    <ClCompile Include="Animate.cpp">
+      <Filter>Image\Jo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -31,6 +31,33 @@
     <Filter Include="GameEntity\Camera">
       <UniqueIdentifier>{da5143f5-05c8-43b2-9fc2-3941bb536b7a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEntity\Object">
+      <UniqueIdentifier>{69ed1054-143f-4cc4-8dca-cf11c9932eb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\Bullet">
+      <UniqueIdentifier>{f7b56186-a597-45b7-ab56-134b706f8273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\Bullet\P_Bullet">
+      <UniqueIdentifier>{a29ac597-b9c7-4a87-87b9-ee6396c1c216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\Bullet\E_Bullet">
+      <UniqueIdentifier>{35deb50f-3dd3-4e2c-ab1e-e0312926600f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\W_Item">
+      <UniqueIdentifier>{154efd89-ffd0-48f2-b1c1-ed2454ec22ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\FrontGroundObject">
+      <UniqueIdentifier>{21cf448e-ef23-438f-ba48-ff9d7135ff3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\N_Item">
+      <UniqueIdentifier>{6f254465-7ab6-4412-ac29-8f695b007e43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\NormalObj">
+      <UniqueIdentifier>{ae0463ab-8fcc-4720-92a4-b391163ffd17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEntity\Object\Stage_1_OBJ">
+      <UniqueIdentifier>{7870d23f-707c-4ce8-881a-3d812dbf33f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -60,6 +87,9 @@
     <ClInclude Include="Camera.h">
       <Filter>GameEntity\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="NormalObj.h">
+      <Filter>GameEntity\Object\NormalObj</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -82,6 +112,9 @@
     </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>GameEntity\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalObj.cpp">
+      <Filter>GameEntity\Object\NormalObj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

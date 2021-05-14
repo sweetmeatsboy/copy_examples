@@ -150,6 +150,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="MetalSlug_copie.h" />
+    <ClInclude Include="NormalObj.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="Pt.h" />
     <ClInclude Include="Resource.h" />
@@ -161,6 +162,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Define.cpp" />
     <ClCompile Include="MetalSlug_copie.cpp" />
+    <ClCompile Include="NormalObj.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="Pt.cpp" />
     <ClCompile Include="RTTI.cpp" />

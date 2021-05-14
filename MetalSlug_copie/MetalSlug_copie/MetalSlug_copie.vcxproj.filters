@@ -70,6 +70,9 @@
     <Filter Include="ResourceMgr">
       <UniqueIdentifier>{f31f29fa-21f6-47a4-8585-429127a1a56e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{af718ad0-abea-4280-8976-5fe75cf5e460}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -117,6 +120,9 @@
     <ClInclude Include="ResourceMgr.h">
       <Filter>ResourceMgr</Filter>
     </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -157,6 +163,9 @@
     </ClCompile>
     <ClCompile Include="ResourceMgr.cpp">
       <Filter>ResourceMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

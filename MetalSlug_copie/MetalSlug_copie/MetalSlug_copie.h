@@ -7,3 +7,4 @@
 #include "Obj.h"
 
 #include "Pt.h"
+#include "Camera.h"

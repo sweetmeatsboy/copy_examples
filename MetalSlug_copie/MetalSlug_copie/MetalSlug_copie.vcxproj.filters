@@ -28,6 +28,9 @@
     <Filter Include="Image\CustomStruct">
       <UniqueIdentifier>{7f113d09-f17d-478b-a780-3f52572460a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEntity\Camera">
+      <UniqueIdentifier>{da5143f5-05c8-43b2-9fc2-3941bb536b7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -54,6 +57,9 @@
     <ClInclude Include="Pt.h">
       <Filter>Image\CustomStruct</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>GameEntity\Camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -73,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="Pt.cpp">
       <Filter>Image\CustomStruct</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>GameEntity\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

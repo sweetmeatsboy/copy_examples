@@ -126,6 +126,9 @@
     <ClInclude Include="Scene.h">
       <Filter>Image\Jo</Filter>
     </ClInclude>
+    <ClInclude Include="Animate.h">
+      <Filter>Image\Jo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -168,6 +171,9 @@
       <Filter>ResourceMgr</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
+      <Filter>Image\Jo</Filter>
+    </ClCompile>
+    <ClCompile Include="Animate.cpp">
       <Filter>Image\Jo</Filter>
     </ClCompile>
   </ItemGroup>

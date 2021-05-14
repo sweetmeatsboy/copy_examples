@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AniDCSet.h" />
+    <ClInclude Include="Animate.h" />
     <ClInclude Include="BitmapDC.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Define.h" />
@@ -166,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AniDCSet.cpp" />
+    <ClCompile Include="Animate.cpp" />
     <ClCompile Include="BitmapDC.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Define.cpp" />

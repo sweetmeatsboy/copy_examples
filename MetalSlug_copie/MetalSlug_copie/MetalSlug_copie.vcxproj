@@ -150,6 +150,7 @@
     <ClInclude Include="BitmapDC.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="FrameDC.h" />
     <ClInclude Include="MetalSlug_copie.h" />
     <ClInclude Include="NormalObj.h" />
     <ClInclude Include="Obj.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="BitmapDC.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Define.cpp" />
+    <ClCompile Include="FrameDC.cpp" />
     <ClCompile Include="MetalSlug_copie.cpp" />
     <ClCompile Include="NormalObj.cpp" />
     <ClCompile Include="Obj.cpp" />

@@ -58,6 +58,9 @@
     <Filter Include="GameEntity\Object\Stage_1_OBJ">
       <UniqueIdentifier>{7870d23f-707c-4ce8-881a-3d812dbf33f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Image\FrameDC">
+      <UniqueIdentifier>{cb5f4d9e-653d-47b8-8c95-901960d86112}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Image\BitmapDC">
       <UniqueIdentifier>{68b695e6-9f2d-4047-baf5-c4ca6cb72692}</UniqueIdentifier>
     </Filter>
@@ -96,6 +99,9 @@
     <ClInclude Include="Rc.h">
       <Filter>Image\CustomStruct</Filter>
     </ClInclude>
+    <ClInclude Include="FrameDC.h">
+      <Filter>Image\FrameDC</Filter>
+    </ClInclude>
     <ClInclude Include="BitmapDC.h">
       <Filter>Image\BitmapDC</Filter>
     </ClInclude>
@@ -127,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="Rc.cpp">
       <Filter>Image\CustomStruct</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameDC.cpp">
+      <Filter>Image\FrameDC</Filter>
     </ClCompile>
     <ClCompile Include="BitmapDC.cpp">
       <Filter>Image\BitmapDC</Filter>

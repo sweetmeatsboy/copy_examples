@@ -90,6 +90,9 @@
     <ClInclude Include="NormalObj.h">
       <Filter>GameEntity\Object\NormalObj</Filter>
     </ClInclude>
+    <ClInclude Include="Rc.h">
+      <Filter>Image\CustomStruct</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -115,6 +118,9 @@
     </ClCompile>
     <ClCompile Include="NormalObj.cpp">
       <Filter>GameEntity\Object\NormalObj</Filter>
+    </ClCompile>
+    <ClCompile Include="Rc.cpp">
+      <Filter>Image\CustomStruct</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

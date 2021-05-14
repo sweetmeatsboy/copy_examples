@@ -153,6 +153,7 @@
     <ClInclude Include="NormalObj.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="Pt.h" />
+    <ClInclude Include="Rc.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="RTTI.h" />
     <ClInclude Include="stdafx.h" />
@@ -165,6 +166,7 @@
     <ClCompile Include="NormalObj.cpp" />
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="Pt.cpp" />
+    <ClCompile Include="Rc.cpp" />
     <ClCompile Include="RTTI.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

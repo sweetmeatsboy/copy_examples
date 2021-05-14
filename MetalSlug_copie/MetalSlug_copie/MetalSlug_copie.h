@@ -9,3 +9,4 @@
 #include "Pt.h"
 #include "Camera.h"
 #include "NormalObj.h"
+#include "Rc.h"

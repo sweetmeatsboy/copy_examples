@@ -64,6 +64,9 @@
     <Filter Include="Image\BitmapDC">
       <UniqueIdentifier>{68b695e6-9f2d-4047-baf5-c4ca6cb72692}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Image\AniDCSet">
+      <UniqueIdentifier>{21769bf6-90ed-4f2a-b0aa-71e457ac836b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -105,6 +108,9 @@
     <ClInclude Include="BitmapDC.h">
       <Filter>Image\BitmapDC</Filter>
     </ClInclude>
+    <ClInclude Include="AniDCSet.h">
+      <Filter>Image\AniDCSet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -139,6 +145,9 @@
     </ClCompile>
     <ClCompile Include="BitmapDC.cpp">
       <Filter>Image\BitmapDC</Filter>
+    </ClCompile>
+    <ClCompile Include="AniDCSet.cpp">
+      <Filter>Image\AniDCSet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

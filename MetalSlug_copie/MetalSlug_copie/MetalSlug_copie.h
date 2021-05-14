@@ -12,4 +12,4 @@
 #include "Rc.h"
 
 #include "BitmapDC.h"
-#include "FrameDC.h"
+#include "FrameDC.h"#include "FrameDC.h"

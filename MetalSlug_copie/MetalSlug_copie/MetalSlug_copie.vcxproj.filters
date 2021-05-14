@@ -73,6 +73,9 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{af718ad0-abea-4280-8976-5fe75cf5e460}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Image\Jo">
+      <UniqueIdentifier>{7f923d4f-129f-4f3a-aca2-15fb755aeda5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -121,7 +124,7 @@
       <Filter>ResourceMgr</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
-      <Filter>Scene</Filter>
+      <Filter>Image\Jo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -165,7 +168,7 @@
       <Filter>ResourceMgr</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
-      <Filter>Scene</Filter>
+      <Filter>Image\Jo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

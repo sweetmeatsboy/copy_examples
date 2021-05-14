@@ -11,6 +11,8 @@
 #include "NormalObj.h"
 #include "Rc.h"
 
+#include "ResourceMgr.h"
+
 #include "BitmapDC.h"
 #include "FrameDC.h"
 #include "AniDCSet.h"

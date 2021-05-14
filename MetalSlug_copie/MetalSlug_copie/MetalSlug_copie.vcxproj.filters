@@ -67,6 +67,9 @@
     <Filter Include="Image\AniDCSet">
       <UniqueIdentifier>{21769bf6-90ed-4f2a-b0aa-71e457ac836b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ResourceMgr">
+      <UniqueIdentifier>{f31f29fa-21f6-47a4-8585-429127a1a56e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -111,6 +114,9 @@
     <ClInclude Include="AniDCSet.h">
       <Filter>Image\AniDCSet</Filter>
     </ClInclude>
+    <ClInclude Include="ResourceMgr.h">
+      <Filter>ResourceMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -148,6 +154,9 @@
     </ClCompile>
     <ClCompile Include="AniDCSet.cpp">
       <Filter>Image\AniDCSet</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceMgr.cpp">
+      <Filter>ResourceMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

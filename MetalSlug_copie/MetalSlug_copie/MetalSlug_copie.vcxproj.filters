@@ -135,6 +135,9 @@
     <ClInclude Include="AniInfoMgr.h">
       <Filter>Image</Filter>
     </ClInclude>
+    <ClInclude Include="SObj.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

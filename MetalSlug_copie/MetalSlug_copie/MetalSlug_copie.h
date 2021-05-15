@@ -23,3 +23,4 @@
 #include "Sprite.h"
 
 #include "AniInfoMgr.h"
+#include "SObj.h"

@@ -27,6 +27,12 @@
     <ClInclude Include="MemoryBitStream.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="GameObjectRegistry.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RoboMath.cpp">
@@ -36,6 +42,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="MemoryBitStream.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectRegistry.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

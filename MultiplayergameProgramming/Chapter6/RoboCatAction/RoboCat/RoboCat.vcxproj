@@ -122,6 +122,8 @@
     <ClInclude Include="RoboMath.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringUtils.h" />
+    <ClInclude Include="TCPSocket.h" />
+    <ClInclude Include="UDPSocket.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +132,8 @@
     <ClCompile Include="MemoryBitStream.cpp" />
     <ClCompile Include="RoboMath.cpp" />
     <ClCompile Include="StringUtils.cpp" />
+    <ClCompile Include="TCPSocket.cpp" />
+    <ClCompile Include="UDPSocket.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

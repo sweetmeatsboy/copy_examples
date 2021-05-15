@@ -33,6 +33,12 @@
     <ClInclude Include="World.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="TCPSocket.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="UDPSocket.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="StringUtils.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -51,6 +57,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="World.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPSocket.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="UDPSocket.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="StringUtils.cpp">

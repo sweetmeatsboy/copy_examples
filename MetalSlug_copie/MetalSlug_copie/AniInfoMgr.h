@@ -1,9 +1,12 @@
 #pragma once
 
-typedef map<wstring, CAniDCSet*> AniDCSetMap;
+class CFrameDC;
+class CAniDCSet;
+
 
 class CAniInfoMgr
 {
+	typedef map<wstring, CAniDCSet*> AniDCSetMap;
 private:
 	AniDCSetMap m_Enemy_Weapon_AniSet;
 	AniDCSetMap m_Player_1_AniSet;
@@ -16,7 +19,6 @@ private:
 	AniDCSetMap m_NormalObjectAniSet_1;
 
 	AniDCSetMap m_Boss_1_AniSet;
-	AniDCSetMap m_FrameList;
 
 	map<int, CAniDCSet*> m_AniSetDCList;
 	map<int, CFrameDC*> m_FrameList;

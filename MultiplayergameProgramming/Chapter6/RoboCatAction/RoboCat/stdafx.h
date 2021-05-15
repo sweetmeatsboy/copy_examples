@@ -65,7 +65,8 @@ class GameObject;
 #include "StringUtils.h"
 #include "SocketUtil.h"
 
+#include "SocketAddress.h"
+
 #include "TCPSocket.h"
 #include "UDPSocket.h"
 
-#include "SocketAddress.h"

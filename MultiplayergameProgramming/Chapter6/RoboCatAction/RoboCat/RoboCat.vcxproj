@@ -116,11 +116,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="MemoryBitStream.h" />
     <ClInclude Include="RoboMath.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="MemoryBitStream.cpp" />
     <ClCompile Include="RoboMath.cpp" />
   </ItemGroup>

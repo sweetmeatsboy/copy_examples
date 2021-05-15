@@ -70,3 +70,4 @@ class GameObject;
 #include "TCPSocket.h"
 #include "UDPSocket.h"
 
+#include "SocketAddressFactory.h"

@@ -121,6 +121,7 @@
     <ClInclude Include="MemoryBitStream.h" />
     <ClInclude Include="RoboMath.h" />
     <ClInclude Include="SocketAddress.h" />
+    <ClInclude Include="SocketUtil.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="TCPSocket.h" />
@@ -133,6 +134,7 @@
     <ClCompile Include="MemoryBitStream.cpp" />
     <ClCompile Include="RoboMath.cpp" />
     <ClCompile Include="SocketAddress.cpp" />
+    <ClCompile Include="SocketUtil.cpp" />
     <ClCompile Include="StringUtils.cpp" />
     <ClCompile Include="TCPSocket.cpp" />
     <ClCompile Include="UDPSocket.cpp" />

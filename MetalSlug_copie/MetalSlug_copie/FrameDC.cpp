@@ -11,7 +11,7 @@ void CFrameDC::SetCenterPoint(const CPt& _pt)
 	m_CenterPoint = _pt;
 }
 
-const CRc* CFrameDC::GetFrameRecv()
+const CRc* CFrameDC::GetFrameRect()
 {
 	return &m_FrameRect;
 }

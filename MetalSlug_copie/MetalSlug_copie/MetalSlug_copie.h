@@ -21,3 +21,5 @@
 #include "Animate.h"
 
 #include "Sprite.h"
+
+#include "AniInfoMgr.h"

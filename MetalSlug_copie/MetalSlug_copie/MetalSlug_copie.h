@@ -24,3 +24,6 @@
 
 #include "AniInfoMgr.h"
 #include "SObj.h"
+#include "Stage_Intro.h"
+#include "Stage_1.h"
+#include "Stage_2.h"

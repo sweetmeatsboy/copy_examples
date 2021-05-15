@@ -76,6 +76,15 @@
     <Filter Include="Image\Jo">
       <UniqueIdentifier>{7f923d4f-129f-4f3a-aca2-15fb755aeda5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\Stage_1">
+      <UniqueIdentifier>{aab04d5f-3631-4192-a6d1-29675d793edc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Stage_2">
+      <UniqueIdentifier>{37a41722-211a-4121-9b0e-75428fc97736}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Stage_Intro">
+      <UniqueIdentifier>{20306e61-0168-4215-aa2a-f22972fc7520}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -138,6 +147,15 @@
     <ClInclude Include="SObj.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Stage_Intro.h">
+      <Filter>Scene\Stage_Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage_2.h">
+      <Filter>Scene\Stage_2</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage_1.h">
+      <Filter>Scene\Stage_1</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -190,6 +208,15 @@
     </ClCompile>
     <ClCompile Include="AniInfoMgr.cpp">
       <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage_Intro.cpp">
+      <Filter>Scene\Stage_Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage_2.cpp">
+      <Filter>Scene\Stage_2</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage_1.cpp">
+      <Filter>Scene\Stage_1</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

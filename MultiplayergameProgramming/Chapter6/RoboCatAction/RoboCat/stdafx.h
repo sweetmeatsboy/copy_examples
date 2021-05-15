@@ -60,4 +60,8 @@ class GameObject;
 #include "GameObject.h"
 #include "World.h"
 
-#include "GameObjectRegistry.h"#include "StringUtils.h"
+#include "GameObjectRegistry.h"#include "StringUtils.h"#include "TCPSocket.h"
+#include "TCPSocket.h"
+#include "UDPSocket.h"
+
+#include "SocketAddress.h"

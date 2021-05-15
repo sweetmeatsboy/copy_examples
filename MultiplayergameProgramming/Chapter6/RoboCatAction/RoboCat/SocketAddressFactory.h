@@ -2,7 +2,6 @@
 
 class SocketAddressFactory
 {
-private:
-
 public:
+	static SocketAddressPtr CreateIPv4FromString(const string& _str);
 };

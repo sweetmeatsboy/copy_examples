@@ -23,6 +23,10 @@
 #include "Sprite.h"
 
 #include "AniInfoMgr.h"
+
+#include "Device.h"
+
+
 #include "SObj.h"
 #include "Stage_Intro.h"
 #include "Stage_1.h"

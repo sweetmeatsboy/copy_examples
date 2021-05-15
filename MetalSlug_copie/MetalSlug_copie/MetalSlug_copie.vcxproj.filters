@@ -85,6 +85,9 @@
     <Filter Include="Scene\Stage_Intro">
       <UniqueIdentifier>{20306e61-0168-4215-aa2a-f22972fc7520}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DeviceMgr">
+      <UniqueIdentifier>{a183b1d0-f44f-434a-9ec1-495b6b4dd602}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -156,6 +159,9 @@
     <ClInclude Include="Stage_1.h">
       <Filter>Scene\Stage_1</Filter>
     </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>DeviceMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -217,6 +223,9 @@
     </ClCompile>
     <ClCompile Include="Stage_1.cpp">
       <Filter>Scene\Stage_1</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>DeviceMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

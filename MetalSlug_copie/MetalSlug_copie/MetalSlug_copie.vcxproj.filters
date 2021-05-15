@@ -132,6 +132,9 @@
     <ClInclude Include="Animate.h">
       <Filter>Image\Jo</Filter>
     </ClInclude>
+    <ClInclude Include="AniInfoMgr.h">
+      <Filter>Image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -181,6 +184,9 @@
     </ClCompile>
     <ClCompile Include="Animate.cpp">
       <Filter>Image\Jo</Filter>
+    </ClCompile>
+    <ClCompile Include="AniInfoMgr.cpp">
+      <Filter>Image</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -15,7 +15,7 @@ public:
 	const CPt* GetCenterPoint();
 	void SetCenterPoint(const CPt& _cp);
 	
-	const CRc* GetFrameRecv();
+	const CRc* GetFrameRect();
 	void SetFrameRect(const CRc& _rc);
 
 public:

@@ -148,10 +148,54 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AniDCSet.h" />
+    <ClInclude Include="AniInfoMgr.h" />
     <ClInclude Include="Animate.h" />
+    <ClInclude Include="AtkSoldier.h" />
+    <ClInclude Include="BulletMgr.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="DeadSoldier.h" />
+    <ClInclude Include="Door.h" />
+    <ClInclude Include="EnemyBullet.h" />
+    <ClInclude Include="Explosion.h" />
+    <ClInclude Include="ExtraSoldier.h" />
+    <ClInclude Include="E_Bakgeok.h" />
+    <ClInclude Include="E_BallingBomb.h" />
+    <ClInclude Include="E_Bomb_1.h" />
+    <ClInclude Include="E_Bomb_2.h" />
+    <ClInclude Include="E_Mine.h" />
+    <ClInclude Include="E_NomalBullet.h" />
+    <ClInclude Include="FrontGroundObject.h" />
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="HPBar.h" />
+    <ClInclude Include="Line.h" />
+    <ClInclude Include="MainGame.h" />
+    <ClInclude Include="MapMgr.h" />
+    <ClInclude Include="NPCBonus.h" />
+    <ClInclude Include="N_Item.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerBullet.h" />
+    <ClInclude Include="Player_1.h" />
+    <ClInclude Include="P_Bomb_1.h" />
+    <ClInclude Include="P_F.h" />
+    <ClInclude Include="P_H.h" />
+    <ClInclude Include="P_Knife.h" />
+    <ClInclude Include="P_NormalBullet.h" />
+    <ClInclude Include="P_S.h" />
+    <ClInclude Include="ReactionSoldier.h" />
+    <ClInclude Include="Rock_1.h" />
+    <ClInclude Include="Soldier.h" />
+    <ClInclude Include="BigCanon.h" />
     <ClInclude Include="BitmapDC.h" />
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="BossBigBullet.h" />
+    <ClInclude Include="BossNomalBullet.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="CollisionMgr.h" />
+    <ClInclude Include="ObjFactory.h" />
+    <ClInclude Include="ObjMgr.h" />
+    <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="Device.h" />
     <ClInclude Include="FrameDC.h" />
     <ClInclude Include="MetalSlug_copie.h" />
     <ClInclude Include="NormalObj.h" />
@@ -162,16 +206,67 @@
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="RTTI.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SideOneTurret.h" />
+    <ClInclude Include="SideTurret.h" />
+    <ClInclude Include="SObj.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Stage_1.h" />
+    <ClInclude Include="Stage_2.h" />
+    <ClInclude Include="Stage_Intro.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextBox.h" />
+    <ClInclude Include="UIMgr.h" />
+    <ClInclude Include="WeaponBox.h" />
+    <ClInclude Include="W_Item.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AniDCSet.cpp" />
+    <ClCompile Include="AniInfoMgr.cpp" />
     <ClCompile Include="Animate.cpp" />
+    <ClCompile Include="AtkSoldier.cpp" />
+    <ClCompile Include="BigCanon.cpp" />
     <ClCompile Include="BitmapDC.cpp" />
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="BossBigBullet.cpp" />
+    <ClCompile Include="BossNomalBullet.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CollisionMgr.cpp" />
+    <ClCompile Include="DeadSoldier.cpp" />
+    <ClCompile Include="Door.cpp" />
+    <ClCompile Include="EnemyBullet.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="ExtraSoldier.cpp" />
+    <ClCompile Include="E_Bakgeok.cpp" />
+    <ClCompile Include="E_BallingBomb.cpp" />
+    <ClCompile Include="E_Bomb_1.cpp" />
+    <ClCompile Include="E_Bomb_2.cpp" />
+    <ClCompile Include="E_Mine.cpp" />
+    <ClCompile Include="E_NomalBullet.cpp" />
+    <ClCompile Include="FrontGroundObject.cpp" />
+    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="HPBar.cpp" />
+    <ClCompile Include="Line.cpp" />
+    <ClCompile Include="MainGame.cpp" />
+    <ClCompile Include="MapMgr.cpp" />
+    <ClCompile Include="NPCBonus.cpp" />
+    <ClCompile Include="N_Item.cpp" />
+    <ClCompile Include="ObjMgr.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerBullet.cpp" />
+    <ClCompile Include="Player_1.cpp" />
+    <ClCompile Include="P_Bomb_1.cpp" />
+    <ClCompile Include="P_F.cpp" />
+    <ClCompile Include="P_H.cpp" />
+    <ClCompile Include="P_Knife.cpp" />
+    <ClCompile Include="P_NormalBullet.cpp" />
+    <ClCompile Include="P_S.cpp" />
+    <ClCompile Include="ReactionSoldier.cpp" />
+    <ClCompile Include="Rock_1.cpp" />
+    <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="Define.cpp" />
+    <ClCompile Include="Device.cpp" />
     <ClCompile Include="FrameDC.cpp" />
     <ClCompile Include="MetalSlug_copie.cpp" />
     <ClCompile Include="NormalObj.cpp" />
@@ -181,13 +276,23 @@
     <ClCompile Include="ResourceMgr.cpp" />
     <ClCompile Include="RTTI.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SideOneTurret.cpp" />
+    <ClCompile Include="SideTurret.cpp" />
+    <ClCompile Include="Soldier.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Stage_1.cpp" />
+    <ClCompile Include="Stage_2.cpp" />
+    <ClCompile Include="Stage_Intro.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TextBox.cpp" />
+    <ClCompile Include="UIMgr.cpp" />
+    <ClCompile Include="WeaponBox.cpp" />
+    <ClCompile Include="W_Item.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MetalSlug_copie.rc" />

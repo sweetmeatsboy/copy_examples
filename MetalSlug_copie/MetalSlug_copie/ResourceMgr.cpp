@@ -60,7 +60,7 @@ CBitmapDC* CResourceMgr::GetBitDCMap(string _str)
 		return GetInst()->m_BitDCMap[_str];
 	else
 	{
-		MessageBox(g_hWnd, _T("해당 이름의 BitDCMap이 존재하지 않습니다."), _str.data, MB_OK);
+		MessageBoxA(g_hWnd, "해당 이름의 BitDCMap이 존재하지 않습니다.", _str.c_str(), MB_OK);
 		return NULL;
 	}
 }

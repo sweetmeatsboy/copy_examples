@@ -35,6 +35,8 @@
 #include <dsound.h>
 #pragma comment(lib, "winmm.lib")
 #pragma comment(lib, "dsound.lib")
+#pragma comment (lib, "Msimg32.lib")
+
 
 #include <crtdbg.h>
 

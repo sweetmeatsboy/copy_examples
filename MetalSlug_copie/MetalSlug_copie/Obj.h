@@ -1,4 +1,6 @@
 #pragma once
+#include "Pt.h"
+#include "RTTI.h"
 
 class CObj
 {
@@ -37,8 +39,8 @@ public:
 		return m_Speed_Y;
 	}
 
-	void SetPos(float _x, float  _y);
-	RECT GetRect(void);
+	void SetPos(float _x, float _y);
+	RECT GetRect();
 	const CPt& GetCenterPoint() const;
 public:
 	virtual void Initialize() = 0;
@@ -46,4 +48,7 @@ public:
 	virtual void Render(HDC _h) = 0;
 	virtual void Release() = 0;
 	virtual void CheckCollision(CObj* _other) = 0;
+public:
+	CObj(void);
+	virtual ~CObj(void);
 };

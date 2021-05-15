@@ -59,3 +59,5 @@ class GameObject;
 #include "MemoryBitStream.h"
 #include "GameObject.h"
 #include "World.h"
+
+#include "GameObjectRegistry.h"

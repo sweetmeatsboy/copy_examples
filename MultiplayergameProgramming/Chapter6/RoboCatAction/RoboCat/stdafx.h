@@ -60,4 +60,4 @@ class GameObject;
 #include "GameObject.h"
 #include "World.h"
 
-#include "GameObjectRegistry.h"
+#include "GameObjectRegistry.h"#include "StringUtils.h"

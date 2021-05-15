@@ -1,34 +1,67 @@
 #include "stdafx.h"
 
-enum SocketAddressFamily
+bool SocketUtil::StaticInit()
 {
-	INET = AF_INET,
-	INET6 = AF_INET6,
-};
+#if _WIN32
+	WSAData wsaData;
+	int ret = WSAStartup(MAKEWORD(2, 2), &wsaData);
+	if (ret != NO_ERROR)
+	{
+		ReportError("Startup err");
+		return false;
+	}
+#endif // _WIN32
+	return true;
+}
 
-class SocketUtil
+void SocketUtil::CleanUp()
 {
-private:
-	inline static fd_set* FillSetFromVector(fd_set& _outSet
-		, const vector<TCPSocketPtr>* _inSockets, int& _ioNaxNfdxs);
-	inline static void FillVectorFromSet(vector<TCPSocketPtr>* _outSockets
-		, const vector<TCPSocketPtr>* _inSockets, const fd_set& _inSet);
-public:
+#if _WIN32
+	WSACleanup();
+#endif // _WIN32
+}
 
-	static bool StaticInit();
-	static void CleanUp();
 
-	static void ReportError(const char* _desc);
-	static int GetLastError();
+void SocketUtil::ReportError(const char* inOperationDesc)
+{
+#if _WIN32
+	LPVOID lpMsgBuf;
+	DWORD errorNum = GetLastError();
 
-	static int Select(const vector<TCPSocketPtr>* _inRead
-		, vector<TCPSocketPtr>* _outRead
-		, const vector<TCPSocketPtr>* _inWrite
-		, vector<TCPSocketPtr>* _outWrite
-		, const vector<TCPSocketPtr>* _inExcept
-		, vector<TCPSocketPtr>* _outExcept);
+	FormatMessage(
+		FORMAT_MESSAGE_ALLOCATE_BUFFER |
+		FORMAT_MESSAGE_FROM_SYSTEM |
+		FORMAT_MESSAGE_IGNORE_INSERTS,
+		NULL,
+		errorNum,
+		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+		(LPTSTR)&lpMsgBuf,
+		0, NULL);
 
-	static TCPSocketPtr CreateTCPSocket(SocketAddressFamily _af);
-	static UDPSocketPtr CreateUDPSocket(SocketAddressFamily _af);
 
-};
+	LOG("Error %s: %d- %s", inOperationDesc, errorNum, lpMsgBuf);
+#else
+	LOG("Error: %hs", inOperationDesc);
+#endif
+}
+
+int SocketUtil::GetLastError()
+{
+#if _WIN32
+	return WSAGetLastError();
+#else
+	return errno;
+#endif
+
+}
+
+UDPSocketPtr SocketUtil::CreateUDPSocket(SocketAddressFamily _af)
+{
+	SOCKET s = socket(_af, SOCK_DGRAM, IPPROTO_UDP);
+	if (s == INVALID_SOCKET)
+	{
+		ReportError("SocketUtil::CreateUDPSocket");
+		return nullptr;
+	}
+	return UDPSocketPtr(new UDPSocket(s));
+}

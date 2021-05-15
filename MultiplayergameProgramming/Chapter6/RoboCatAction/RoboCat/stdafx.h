@@ -58,3 +58,4 @@ class GameObject;
 #include "RoboMath.h"
 #include "MemoryBitStream.h"
 #include "GameObject.h"
+#include "World.h"

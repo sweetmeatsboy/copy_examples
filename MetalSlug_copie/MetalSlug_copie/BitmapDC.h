@@ -33,6 +33,10 @@ public:
 	{
 		return m_BitmapInfo.bmWidth;
 	}
+	int GetBitmapHeight()
+	{
+		return m_BitmapInfo.bmHeight;
+	}
 	CBitmapDC* CreateBuffer(int _x, int _y);
 public:
 	virtual void Release();

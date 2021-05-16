@@ -126,6 +126,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="TCPSocket.h" />
+    <ClInclude Include="Timing.h" />
     <ClInclude Include="UDPSocket.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
@@ -139,6 +140,7 @@
     <ClCompile Include="SocketUtil.cpp" />
     <ClCompile Include="StringUtils.cpp" />
     <ClCompile Include="TCPSocket.cpp" />
+    <ClCompile Include="Timing.cpp" />
     <ClCompile Include="UDPSocket.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>

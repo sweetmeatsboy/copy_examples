@@ -73,5 +73,6 @@ class GameObject;
 #include "SocketAddressFactory.h"
 #include "Timing.h"
 
+#include "WeightedTimedMovingAverage.h"
 
 #include "NetworkManager.h"

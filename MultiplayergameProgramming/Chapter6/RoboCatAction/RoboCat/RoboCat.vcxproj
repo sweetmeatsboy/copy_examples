@@ -129,6 +129,7 @@
     <ClInclude Include="TCPSocket.h" />
     <ClInclude Include="Timing.h" />
     <ClInclude Include="UDPSocket.h" />
+    <ClInclude Include="WeightedTimedMovingAverage.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>

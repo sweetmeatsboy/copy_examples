@@ -120,7 +120,6 @@
     <ClInclude Include="GameObjectRegistry.h" />
     <ClInclude Include="MemoryBitStream.h" />
     <ClInclude Include="RoboMath.h" />
-    <ClInclude Include="SocketAddress.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
@@ -129,7 +128,6 @@
     <ClCompile Include="GameObjectRegistry.cpp" />
     <ClCompile Include="MemoryBitStream.cpp" />
     <ClCompile Include="RoboMath.cpp" />
-    <ClCompile Include="SocketAddress.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

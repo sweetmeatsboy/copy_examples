@@ -61,5 +61,3 @@ class GameObject;
 #include "World.h"
 
 #include "GameObjectRegistry.h"
-#include "SocketAddress.h"
-

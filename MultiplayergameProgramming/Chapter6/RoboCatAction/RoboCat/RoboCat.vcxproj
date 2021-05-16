@@ -119,6 +119,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectRegistry.h" />
     <ClInclude Include="MemoryBitStream.h" />
+    <ClInclude Include="NetworkManager.h" />
     <ClInclude Include="RoboMath.h" />
     <ClInclude Include="SocketAddress.h" />
     <ClInclude Include="SocketAddressFactory.h" />
@@ -134,6 +135,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectRegistry.cpp" />
     <ClCompile Include="MemoryBitStream.cpp" />
+    <ClCompile Include="NetworkManager.cpp" />
     <ClCompile Include="RoboMath.cpp" />
     <ClCompile Include="SocketAddress.cpp" />
     <ClCompile Include="SocketAddressFactory.cpp" />

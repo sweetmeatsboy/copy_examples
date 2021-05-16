@@ -74,3 +74,4 @@ class GameObject;
 #include "Timing.h"
 
 
+#include "NetworkManager.h"

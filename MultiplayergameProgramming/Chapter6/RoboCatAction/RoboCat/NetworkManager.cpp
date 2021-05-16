@@ -85,3 +85,48 @@ void NetworkManager::ReadIncomingPacketsIntoQueue()
 	}
 }
 
+void NetworkManager::ProcessQueuedPackets()
+{
+	while (mPacketQeue.empty() == false)
+	{
+		auto& p = mPacketQeue.front();
+		if (Timing::sInstance.GetTimef() <= p.GetReceivedTime())
+			break;
+		ProcessPacket(p.GetPacketBuffer(), p.GetFromAddress());
+		mPacketQeue.pop();
+	}
+}
+
+void NetworkManager::SendPacket(const OutputMemoryBitStream& _stream, const SocketAddress& _from)
+{
+	int sendCnt = mSocket->SendTo(_stream.GetBufferPtr(), _stream.GetByteLength(), _from);
+	if (sendCnt > 0)
+	{
+		mBytesSentThisFrame += sendCnt;
+	}
+}
+
+void NetworkManager::UpdateBytesSentLastFrame()
+{
+	if (mBytesSentThisFrame < 1)
+		return;
+	mBytesSentPerSecond
+		.UpdatePerSecond(static_cast<float>(mBytesSentThisFrame));
+	mBytesSentThisFrame = 0;
+}
+
+NetworkManager::ReceivedPacket::ReceivedPacket(float _recvTime, InputMemoryBitStream& _stream, const SocketAddress& _from)
+	: mReceivedTime(_recvTime), mFromAddress(_from), mPacketBuffer(_stream)
+{
+
+}
+
+void NetworkManager::AddToNetworkIdToGameObjectMap(GameObjectPtr _p)
+{
+	mNetworkIdToGameObjectMap[_p->GetNetworkId()] = _p;
+}
+
+void NetworkManager::RemoveFromNetworkIdToGameObjectMap(GameObjectPtr _p)
+{
+	mNetworkIdToGameObjectMap.erase(_p->GetNetworkId());
+}

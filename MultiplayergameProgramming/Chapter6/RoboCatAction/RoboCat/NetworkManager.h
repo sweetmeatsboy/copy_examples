@@ -14,7 +14,7 @@ private:
 		SocketAddress mFromAddress;
 	public:
 
-		ReceivedPacket(float _recvTime, InputMemoryBitStream& _stream);
+		ReceivedPacket(float _recvTime, InputMemoryBitStream& _stream, const SocketAddress& _from);
 		const SocketAddress& GetFromAddress() const
 		{
 			return mFromAddress;

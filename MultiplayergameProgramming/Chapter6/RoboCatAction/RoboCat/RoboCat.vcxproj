@@ -118,6 +118,7 @@
   <ItemGroup>
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectRegistry.h" />
+    <ClInclude Include="InputState.h" />
     <ClInclude Include="MemoryBitStream.h" />
     <ClInclude Include="NetworkManager.h" />
     <ClInclude Include="RoboMath.h" />
@@ -135,6 +136,7 @@
   <ItemGroup>
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectRegistry.cpp" />
+    <ClCompile Include="InputState.cpp" />
     <ClCompile Include="MemoryBitStream.cpp" />
     <ClCompile Include="NetworkManager.cpp" />
     <ClCompile Include="RoboMath.cpp" />

@@ -76,3 +76,4 @@ class GameObject;
 #include "WeightedTimedMovingAverage.h"
 
 #include "NetworkManager.h"
+#include "InputState.h"

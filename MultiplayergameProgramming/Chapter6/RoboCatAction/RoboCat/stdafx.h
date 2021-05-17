@@ -71,3 +71,14 @@ class GameObject;
 #include "UDPSocket.h"
 
 #include "SocketAddressFactory.h"
+#include "Timing.h"
+
+#include "WeightedTimedMovingAverage.h"
+
+#include "NetworkManager.h"
+#include "InputState.h"
+#include "InputAction.h"
+
+#include "Mouse.h"
+#include "Move.h"
+#include "MoveList.h"

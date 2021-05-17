@@ -1,6 +1,6 @@
 #pragma once
 
-#define CALSS_IDENTIFICATION(inCode, inClass)	\
+#define CLASS_IDENTIFICATION(inCode, inClass)	\
 enum {											\
 	kClassId = inCode							\
 };												\
@@ -27,7 +27,7 @@ private:
 	bool mDoesWantToDie;
 	int mNetworkId;
 public:
-	CALSS_IDENTIFICATION('GOBJ', GameObject);
+	CLASS_IDENTIFICATION('GOBJ', GameObject);
 	GameObject();
 	virtual ~GameObject() {};
 	virtual RoboCat* GetAsCat() { return nullptr; }

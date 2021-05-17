@@ -118,6 +118,7 @@
   <ItemGroup>
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectRegistry.h" />
+    <ClInclude Include="InputAction.h" />
     <ClInclude Include="InputState.h" />
     <ClInclude Include="MemoryBitStream.h" />
     <ClInclude Include="NetworkManager.h" />

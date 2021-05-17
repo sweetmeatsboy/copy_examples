@@ -77,3 +77,4 @@ class GameObject;
 
 #include "NetworkManager.h"
 #include "InputState.h"
+#include "InputAction.h"

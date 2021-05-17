@@ -80,3 +80,5 @@ class GameObject;
 #include "InputAction.h"
 
 #include "Mouse.h"
+#include "Move.h"
+#include "MoveList.h"

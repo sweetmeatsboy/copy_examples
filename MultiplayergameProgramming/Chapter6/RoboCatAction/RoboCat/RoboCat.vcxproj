@@ -122,6 +122,8 @@
     <ClInclude Include="InputState.h" />
     <ClInclude Include="MemoryBitStream.h" />
     <ClInclude Include="Mouse.h" />
+    <ClInclude Include="Move.h" />
+    <ClInclude Include="MoveList.h" />
     <ClInclude Include="NetworkManager.h" />
     <ClInclude Include="RoboMath.h" />
     <ClInclude Include="SocketAddress.h" />
@@ -141,6 +143,8 @@
     <ClCompile Include="InputState.cpp" />
     <ClCompile Include="MemoryBitStream.cpp" />
     <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="MoveList.cpp" />
     <ClCompile Include="NetworkManager.cpp" />
     <ClCompile Include="RoboMath.cpp" />
     <ClCompile Include="SocketAddress.cpp" />

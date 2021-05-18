@@ -84,3 +84,5 @@ class GameObject;
 #include "MoveList.h"
 
 #include "RoboCat.h"
+#include "ScoreBoardManager.h"
+

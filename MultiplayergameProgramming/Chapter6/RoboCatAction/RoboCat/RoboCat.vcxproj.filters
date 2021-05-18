@@ -78,6 +78,9 @@
     <ClInclude Include="RoboCat.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="ScoreBoardManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RoboMath.cpp">
@@ -132,6 +135,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="RoboCat.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreBoardManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

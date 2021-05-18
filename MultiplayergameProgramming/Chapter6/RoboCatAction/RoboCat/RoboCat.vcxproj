@@ -127,6 +127,7 @@
     <ClInclude Include="NetworkManager.h" />
     <ClInclude Include="RoboCat.h" />
     <ClInclude Include="RoboMath.h" />
+    <ClInclude Include="ScoreBoardManager.h" />
     <ClInclude Include="SocketAddress.h" />
     <ClInclude Include="SocketAddressFactory.h" />
     <ClInclude Include="SocketUtil.h" />
@@ -149,6 +150,7 @@
     <ClCompile Include="NetworkManager.cpp" />
     <ClCompile Include="RoboCat.cpp" />
     <ClCompile Include="RoboMath.cpp" />
+    <ClCompile Include="ScoreBoardManager.cpp" />
     <ClCompile Include="SocketAddress.cpp" />
     <ClCompile Include="SocketAddressFactory.cpp" />
     <ClCompile Include="SocketUtil.cpp" />

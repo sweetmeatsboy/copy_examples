@@ -53,17 +53,20 @@ void CPlayer_1::Initialize(void)
 
 	m_isKnifeAtk = false;
 	//상체 애니메이션 부분.
-	m_BodyAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("BODY_IDLE"));
+	m_BodyAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_1_AniSet"), _T("BODY_IDLE"));
+	//m_BodyAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("BODY_IDLE"));
 	m_dwBodyTimer = GetTickCount();
 	m_CurBodyFrame = 0;
 
 	//하체 애니메이션 관련 부분
-	m_LegAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("LEG_IDLE"));
+	m_LegAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_1_AniSet"), _T("LEG_IDLE"));
+	//m_LegAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("LEG_IDLE"));
 	m_dwLegTimer = GetTickCount();
 	m_CurLegFrame = 0;
 	//앉은 자세 
 	m_Sit_State = SIT_IDLE;
-	m_SitAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("SIT_IDLE"));
+	m_SitAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_1_AniSet"), _T("SIT_IDLE"));
+	//m_SitAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("SIT_IDLE"));
 	m_CurSitFrame = 0;
 
 	m_Posin.setX(m_tInfo.fX + 30.f);
@@ -409,7 +412,8 @@ void CPlayer_1::SelectSitAni()	//현재 앉은 자세 상태에 맞는 애니메이션을 SEt해줌
 void CPlayer_1::SetSitAni(const TCHAR* _AniName)
 {
 	m_CurSitFrame = 0;
-	m_SitAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_AniName);
+	m_SitAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_1_AniSet"), _AniName);
+	//m_SitAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_AniName);
 }
 
 void CPlayer_1::SelectWeapon()
@@ -981,7 +985,8 @@ void CPlayer_1::SelectBodyAni()
 void CPlayer_1::SetBodyAni(const TCHAR* _AniName)
 {
 	m_CurBodyFrame = 0;
-	m_BodyAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_AniName);
+	m_BodyAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_1_AniSet"), _AniName);
+	//m_BodyAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_AniName);
 }
 
 
@@ -1012,7 +1017,8 @@ void CPlayer_1::SelectLegAni()
 void CPlayer_1::SetLegAni(const TCHAR* _AniName)
 {
 	m_CurLegFrame = 0;
-	m_LegAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_AniName);
+	m_LegAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_1_AniSet"), _AniName);
+	//m_LegAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_AniName);
 }
 void CPlayer_1::ControllLegState()
 {

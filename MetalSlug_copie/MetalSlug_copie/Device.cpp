@@ -20,7 +20,8 @@ CDevice::~CDevice(void)
 }
 void CDevice::PopMsgBox(const TCHAR* _contents, const TCHAR* _title)
 {
-	MessageBox(g_hWnd, _contents, _title, MB_OK);
+	ErrorMgr::GetInst().ErrBoxPopupT(_title, _contents, true);
+	//MessageBox(g_hWnd, _contents, _title, MB_OK);
 }
 
 HRESULT CDevice::Init(void)

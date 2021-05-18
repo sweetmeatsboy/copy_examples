@@ -71,9 +71,8 @@ void CAtkSoldier::SetAniName(const TCHAR* _Name)
 		m_AtkFrame = 1;
 		m_ActType = STAND;
 	}
-
-	m_AtkSoldierAni =
-		CAniInfoMgr::Getinst()->GetNormal_Soldier_AniSet(_Name);
+	m_AtkSoldierAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Nomal_Soldier_AniSet"), _Name);
+	//m_AtkSoldierAni = CAniInfoMgr::Getinst()->GetNormal_Soldier_AniSet(_Name);
 	// 탄 클래스 설계 되면 탄 종류도 여기서 초기화 해주자.
 }
 

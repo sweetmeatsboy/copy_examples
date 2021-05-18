@@ -8,21 +8,25 @@ void CP_F::SetAngle(float _Angle)
 	m_fAngle = _Angle;
 	if ((m_fAngle >= 0.f && m_fAngle <= 45.f) || (m_fAngle >= 325.f && m_fAngle <= 360.f))
 	{
-		m_Ani = CAniInfoMgr::Getinst()->GetPlayer_Weapon_AniSet(_T("P_W_F"));
+		
+		m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_Weapon_AniSet"), _T("P_W_F"));
+		//m_Ani = CAniInfoMgr::Getinst()->GetPlayer_Weapon_AniSet(_T("P_W_F"));
 		m_Speed_X = 5.f;
 		m_Speed_Y = -0.5f;
 		m_fAngle = 0.f;
 	}
 	if (m_fAngle > 45.f && m_fAngle <= 135.f)
 	{
-		m_Ani = CAniInfoMgr::Getinst()->GetPlayer_Weapon_AniSet(_T("P_W_F_UP"));
+		m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_Weapon_AniSet"), _T("P_W_F_UP"));
+		//m_Ani = CAniInfoMgr::Getinst()->GetPlayer_Weapon_AniSet(_T("P_W_F_UP"));
 		m_Speed_X = 0.f;
 		m_Speed_Y = -0.5f;
 		m_fAngle = 90.f;
 	}
 	if (m_fAngle > 135.f && m_fAngle <= 225.f)
 	{
-		m_Ani = CAniInfoMgr::Getinst()->GetPlayer_Weapon_AniSet(_T("P_W_F"));
+		m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_Weapon_AniSet"), _T("P_W_F"));
+		//m_Ani = CAniInfoMgr::Getinst()->GetPlayer_Weapon_AniSet(_T("P_W_F"));
 		isLeft = true;
 		m_Speed_X = -5.f;
 		m_Speed_Y = -0.5f;
@@ -30,7 +34,8 @@ void CP_F::SetAngle(float _Angle)
 	}
 	if (m_fAngle > 225.f && m_fAngle <= 325.f)
 	{
-		m_Ani = CAniInfoMgr::Getinst()->GetPlayer_Weapon_AniSet(_T("P_W_F_DOWN"));
+		m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_Weapon_AniSet"), _T("P_W_F_DOWN"));
+		//m_Ani = CAniInfoMgr::Getinst()->GetPlayer_Weapon_AniSet(_T("P_W_F_DOWN"));
 		m_Speed_X = 0.f;
 		m_Speed_Y = 0.5f;
 		m_fAngle = 270.f;

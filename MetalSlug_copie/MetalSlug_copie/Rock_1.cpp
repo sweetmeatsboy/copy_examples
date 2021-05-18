@@ -5,7 +5,8 @@ const RTTI CRock_1::m_Rtti("CRock_1", CObj::m_Rtti);
 void CRock_1::Initialize(void)
 {
 	m_tInfo = INFO(100, 100, 100, 100);
-	m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_T("STAGE_1_ROCK"));
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_NormalObjectAniSet_1"), _T("STAGE_1_ROCK"));
+	//m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_T("STAGE_1_ROCK"));
 	m_Line = new CLine();
 	CMapMgr::GetInst()->AddLine(m_Line);
 }

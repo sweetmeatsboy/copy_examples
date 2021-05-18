@@ -2,11 +2,9 @@
 
 const CAniDCSet::FrameInfo* CAniDCSet::GetFrameInfoByIdx(int _Idx) const
 {
-	if ((unsigned)_Idx > m_FrameInfo.size())
-	{
-		MessageBox(g_hWnd, _T("AniDCSet_GetFrameInfoByIdx"), _T("Error"), MB_OK);
-		return NULL;
-	}
+	auto err = ErrorMgr::GetInst().ErrBoxPopupT(_T("AniDCSet_GetFrameInfoByIdx"), _T("Error"), (unsigned)_Idx > m_FrameInfo.size());
+	if (err)
+		return nullptr;
 	return m_FrameInfo.at(_Idx);
 }
 void CAniDCSet::SetAniName(const TCHAR* _Name)

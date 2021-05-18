@@ -19,7 +19,9 @@ void CMainGame::Initialize(void)
 	CResourceMgr::GetInst();
 
 	CDevice::GetInstance();
-
+	
+	FileMgr::GetInst();
+	ErrorMgr::GetInst().Init(g_hWnd);
 }
 
 void CMainGame::Progress(void)

@@ -7,7 +7,8 @@ const TCHAR* CW_Item::GetWeaponItemName() const
 }
 void CW_Item::SetWeaponItemName(const TCHAR* _Name)
 {
-	m_Ani = CAniInfoMgr::Getinst()->Get_ETC_Item_AniSet(_Name);
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Item_AniSet"), _Name);
+	//m_Ani = CAniInfoMgr::Getinst()->Get_ETC_Item_AniSet(_Name);
 	m_CurFrame = 0;
 	m_AniTimer = GetTickCount();
 }

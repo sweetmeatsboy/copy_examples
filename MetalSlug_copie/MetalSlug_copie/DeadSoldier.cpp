@@ -4,7 +4,8 @@
 const RTTI CDeadSoldier::m_Rtti("CDeadSoldier", CSoldier::m_Rtti);
 void CDeadSoldier::SetAniName(const TCHAR* _Name)
 {
-	m_DeadSoldierAni = CAniInfoMgr::Getinst()->GetNormal_Soldier_AniSet(_Name);
+	m_DeadSoldierAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Nomal_Soldier_AniSet"), _Name);
+	//m_DeadSoldierAni = CAniInfoMgr::Getinst()->GetNormal_Soldier_AniSet(_Name);
 	CurFrame = 0;
 	MaxFrameCount = m_DeadSoldierAni->GetFrameCount();
 }

@@ -6,6 +6,7 @@
 #include "RTTI.h"
 #include "Obj.h"
 
+
 #include "Line.h"
 #include "MapMgr.h"
 
@@ -13,6 +14,8 @@
 #include "Camera.h"
 #include "NormalObj.h"
 #include "Rc.h"
+
+#include "ErrorMgr.h"
 
 #include "ResourceMgr.h"
 #include "ObjFactory.h"
@@ -98,4 +101,4 @@
 
 #include "MainGame.h"
 
-
+#include "FileMgr.h"

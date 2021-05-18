@@ -113,6 +113,16 @@ void CTextBox::Initialize()
 }
 void CTextBox::SoltingSmallSilver()
 {
+	auto aniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_UI_Set_1_AniSet"), _T("SMALL_SILVER"));
+	for (int idx = '0', delta = '0'; idx <= '9'; idx++)
+	{
+		m_Small_SilverSet[idx] = aniSet->GetFrameInfoByIdx(idx-delta)->m_Frame;
+	}
+	for (int idx = 'A', delta = 'A'; idx <= 'Z'; idx++)
+	{
+		m_Small_SilverSet[idx] = aniSet->GetFrameInfoByIdx(idx - delta+10)->m_Frame;
+	}
+/*
 	m_Small_SilverSet['0'] =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("SMALL_SILVER"))->GetFrameInfoByIdx(0)->m_Frame;
 	m_Small_SilverSet['1'] =
@@ -184,10 +194,21 @@ void CTextBox::SoltingSmallSilver()
 	m_Small_SilverSet['Y'] =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("SMALL_SILVER"))->GetFrameInfoByIdx(34)->m_Frame;
 	m_Small_SilverSet['Z'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("SMALL_SILVER"))->GetFrameInfoByIdx(35)->m_Frame;
+		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("SMALL_SILVER"))->GetFrameInfoByIdx(35)->m_Frame;*/
 }
 void CTextBox::SoltingNomalSilver()
 {
+	auto aniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_UI_Set_1_AniSet"), _T("NOMAL_SILVER"));
+	
+	for (int idx = '0', delta = '0'; idx <= '9'; idx++)
+	{
+		m_Nomal_SilverSet[idx] = aniSet->GetFrameInfoByIdx(idx - delta)->m_Frame;
+	}
+	for (int idx = 'A', delta = 'A'; idx <= 'Z'; idx++)
+	{
+		m_Nomal_SilverSet[idx] = aniSet->GetFrameInfoByIdx(idx - delta + 10)->m_Frame;
+	}
+/*
 	m_Nomal_SilverSet['0'] =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("NOMAL_SILVER"))->GetFrameInfoByIdx(0)->m_Frame;
 	m_Nomal_SilverSet['1'] =
@@ -259,10 +280,21 @@ void CTextBox::SoltingNomalSilver()
 	m_Nomal_SilverSet['Y'] =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("NOMAL_SILVER"))->GetFrameInfoByIdx(34)->m_Frame;
 	m_Nomal_SilverSet['Z'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("NOMAL_SILVER"))->GetFrameInfoByIdx(35)->m_Frame;
+		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("NOMAL_SILVER"))->GetFrameInfoByIdx(35)->m_Frame;*/
 }
 void CTextBox::SoltingBigSilver()
 {
+	auto aniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_UI_Set_1_AniSet"), _T("BIG_SILVER"));
+
+	for (int idx = '0', delta = '0'; idx <= '9'; idx++)
+	{
+		m_Big_SilverSet[idx] = aniSet->GetFrameInfoByIdx(idx - delta)->m_Frame;
+	}
+	for (int idx = 'A', delta = 'A'; idx <= 'Z'; idx++)
+	{
+		m_Big_SilverSet[idx] = aniSet->GetFrameInfoByIdx(idx - delta + 10)->m_Frame;
+	}
+/*
 	m_Big_SilverSet['0'] =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_SILVER"))->GetFrameInfoByIdx(0)->m_Frame;
 	m_Big_SilverSet['1'] =
@@ -334,12 +366,21 @@ void CTextBox::SoltingBigSilver()
 	m_Big_SilverSet['Y'] =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_SILVER"))->GetFrameInfoByIdx(34)->m_Frame;
 	m_Big_SilverSet['Z'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_SILVER"))->GetFrameInfoByIdx(35)->m_Frame;
+		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_SILVER"))->GetFrameInfoByIdx(35)->m_Frame;*/
 }
 
 void CTextBox::SoltingSmallGold()
 {
-	m_Small_GoldSet['0'] =
+	auto aniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_UI_Set_1_AniSet"), _T("SMALL_GOLD"));
+	for (int idx = '0', delta = '0'; idx <= '9'; idx++)
+	{
+		m_Small_GoldSet[idx] = aniSet->GetFrameInfoByIdx(idx - delta)->m_Frame;
+	}
+	for (int idx = 'A', delta = 'A'; idx <= 'Z'; idx++)
+	{
+		m_Small_GoldSet[idx] = aniSet->GetFrameInfoByIdx(idx - delta + 10)->m_Frame;
+	}
+	/*m_Small_GoldSet['0'] =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("SMALL_GOLD"))->GetFrameInfoByIdx(0)->m_Frame;
 	m_Small_GoldSet['1'] =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("SMALL_GOLD"))->GetFrameInfoByIdx(1)->m_Frame;
@@ -410,33 +451,40 @@ void CTextBox::SoltingSmallGold()
 	m_Small_GoldSet['Y'] =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("SMALL_GOLD"))->GetFrameInfoByIdx(34)->m_Frame;
 	m_Small_GoldSet['Z'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("SMALL_GOLD"))->GetFrameInfoByIdx(35)->m_Frame;
+		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("SMALL_GOLD"))->GetFrameInfoByIdx(35)->m_Frame;*/
 
 }
 void CTextBox::SoltingBigGold()
 {
-	m_Big_GoldSet['0'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(0)->m_Frame;
-	m_Big_GoldSet['1'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(1)->m_Frame;
-	m_Big_GoldSet['2'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(2)->m_Frame;
-	m_Big_GoldSet['3'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(3)->m_Frame;
-	m_Big_GoldSet['4'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(4)->m_Frame;
-	m_Big_GoldSet['5'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(5)->m_Frame;
-	m_Big_GoldSet['6'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(6)->m_Frame;
-	m_Big_GoldSet['7'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(7)->m_Frame;
-	m_Big_GoldSet['8'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(8)->m_Frame;
-	m_Big_GoldSet['9'] =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(9)->m_Frame;
-	m_Big_GoldSet['N'] =		//무한대 기호.
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(10)->m_Frame;
+	auto aniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_UI_Set_1_AniSet"), _T("BIG_GOLD"));
+	for (int idx = '0', delta = '0'; idx <= '9'; idx++)
+	{
+		m_Big_GoldSet[idx] = aniSet->GetFrameInfoByIdx(idx - delta)->m_Frame;
+	}
+	m_Big_GoldSet['N'] = aniSet->GetFrameInfoByIdx(10)->m_Frame;
+
+	//m_Big_GoldSet['0'] =
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(0)->m_Frame;
+	//m_Big_GoldSet['1'] =
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(1)->m_Frame;
+	//m_Big_GoldSet['2'] =
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(2)->m_Frame;
+	//m_Big_GoldSet['3'] =
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(3)->m_Frame;
+	//m_Big_GoldSet['4'] =
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(4)->m_Frame;
+	//m_Big_GoldSet['5'] =
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(5)->m_Frame;
+	//m_Big_GoldSet['6'] =
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(6)->m_Frame;
+	//m_Big_GoldSet['7'] =
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(7)->m_Frame;
+	//m_Big_GoldSet['8'] =
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(8)->m_Frame;
+	//m_Big_GoldSet['9'] =
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(9)->m_Frame;
+	//m_Big_GoldSet['N'] =		//무한대 기호.
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("BIG_GOLD"))->GetFrameInfoByIdx(10)->m_Frame;
 }
 
 

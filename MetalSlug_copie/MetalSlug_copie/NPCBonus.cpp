@@ -13,8 +13,11 @@ void CNPCBonus::SetIconSize(float _W, float _H)
 }
 void CNPCBonus::Initialize()
 {
-	m_Icon =
-		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("NPC_COUNT"))->GetFrameInfoByIdx(0)->m_Frame;
+	m_Icon = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_UI_Set_1_AniSet"), _T("NPC_COUNT"))
+		->GetFrameInfoByIdx(0)->m_Frame;
+	
+	//m_Icon =
+	//	CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("NPC_COUNT"))->GetFrameInfoByIdx(0)->m_Frame;
 
 	m_Icon_Pos_X = 0;
 	m_Icon_Pos_Y = 0;

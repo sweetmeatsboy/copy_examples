@@ -13,7 +13,8 @@ void CBitmapDC::CheckResource()
 void CBitmapDC::ErrMsg(const TCHAR* _err1, const TCHAR* _err2)
 {
 	swprintf_s(tempStr, _err1);
-	MessageBox(g_hWnd, tempStr, _err2, MB_OK);
+	ErrorMgr::GetInst().ErrBoxPopupT(tempStr, _err2, true);
+	//MessageBox(g_hWnd, tempStr, _err2, MB_OK);
 }
 
 

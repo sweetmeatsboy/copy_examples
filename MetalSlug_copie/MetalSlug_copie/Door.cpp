@@ -5,7 +5,8 @@ const RTTI CDoor::m_Rtti("CDoor", CNormalObj::m_Rtti);
 void CDoor::Initialize(void)
 {
 	m_tInfo = INFO(100, 100, 200, 250);
-	m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_T("STAGE_1_FRONT_DOOR_1"));
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_NormalObjectAniSet_1"), _T("STAGE_1_FRONT_DOOR_1"));
+	//m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_T("STAGE_1_FRONT_DOOR_1"));
 	MovingDistance = 0;
 	temp = 1.5f;
 	isDead = false;

@@ -2,7 +2,6 @@
 //
 
 #include "stdafx.h"
-#include "MetalSlug_copie.h"
 
 #define MAX_LOADSTRING 100
 

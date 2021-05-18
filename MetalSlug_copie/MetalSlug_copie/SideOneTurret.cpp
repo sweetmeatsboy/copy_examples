@@ -26,7 +26,8 @@ void CSideOneTurret::Initialize(void)
 	m_Turret_State = Turret_IDLE;
 	m_TurretSFXAni = NULL;
 	//초기 터렛타입이 MID이므로 2_IDLE을 지정해준다.
-	m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_2_IDLE"));
+	m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_ONE_TURRET_2_IDLE"));
+	//m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_2_IDLE"));
 	m_Parent = NULL;
 	m_Target = NULL;
 
@@ -58,9 +59,11 @@ void CSideOneTurret::ProgressIdle()
 			m_dwPaternTimer = GetTickCount();
 			m_Turret_State = Turret_TURNING;
 
-			m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_TURNING"));
+			m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_ONE_TURRET_TURNING"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_ONE_TURRET_FIRING_SFX_0"));
 
-			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_SFX_0"));
+			/*m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_TURNING"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_SFX_0"));*/
 
 		}
 		if (CurFrame >= m_TurretAni->GetFrameCount())
@@ -89,20 +92,27 @@ void CSideOneTurret::ProgressFiring()
 		//ProgressFiring에ㅐ서 상태가 Fire로 바뀐 직후에 SFX를 띄워주며 탄도 생성해야 한다.
 		//그리고 FIRE 애니메이션도 LEFT, MID, RIGHT를 여기서 정해줘야 함.
 
+
 		if (m_TurretType == TurretType_MID)
 		{
-			m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_MID"));
-			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_SFX_2"));
+			m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_ONE_TURRET_FIRING_MID"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_ONE_TURRET_FIRING_SFX_2"));
+			/*m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_MID"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_SFX_2"));*/
 		}
 		if (m_TurretType == TurretType_LEFT)
 		{
-			m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_LEFT"));
-			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_SFX_1"));
+			m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_ONE_TURRET_FIRING_LEFT"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_ONE_TURRET_FIRING_SFX_1"));
+			/*m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_LEFT"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_SFX_1"));*/
 		}
 		if (m_TurretType == TurretType_RIGHT)
 		{
-			m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_RIGHT"));
-			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_SFX_3"));
+			m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_ONE_TURRET_FIRING_RIGHT"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_ONE_TURRET_FIRING_SFX_3"));
+			/*m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_RIGHT"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_SFX_3"));*/
 		}
 
 		//탄을 여기서 생성한다.
@@ -141,9 +151,11 @@ void CSideOneTurret::ProgressFire()
 			m_Turret_State = Turret_TURNING;
 			CalcDistanceTarget();
 			CurFrame = (int)m_TargetPosState;
-			m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_TURNING"));
-
-			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_SFX_0"));
+			m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_ONE_TURRET_TURNING"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_ONE_TURRET_FIRING_SFX_0"));
+			/*
+						m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_TURNING"));
+						m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_ONE_TURRET_FIRING_SFX_0"));*/
 		}
 	}
 }
@@ -213,16 +225,13 @@ void CSideOneTurret::CheckCollision(CObj* _Something)
 
 void CSideOneTurret::UpdatePos()
 {
-	if (m_Parent != NULL)
-	{
-		m_tInfo.fX = m_Parent->GetInfo().fX + m_DeltaPos_X;
-		m_tInfo.fY = m_Parent->GetInfo().fY + m_DeltaPos_Y;
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("sideOneTurret"), _T("SideOneTurret's Parent is NULL"), m_Parent == nullptr))
+		return;
 
-		SetPos(m_Parent->GetInfo().fX + m_DeltaPos_X, m_Parent->GetInfo().fY + m_DeltaPos_Y);
+	m_tInfo.fX = m_Parent->GetInfo().fX + m_DeltaPos_X;
+	m_tInfo.fY = m_Parent->GetInfo().fY + m_DeltaPos_Y;
 
-	}
-	else
-		MessageBox(g_hWnd, _T("SideOneTurret's Parent is NULL"), _T("Error"), MB_OK);
+	SetPos(m_Parent->GetInfo().fX + m_DeltaPos_X, m_Parent->GetInfo().fY + m_DeltaPos_Y);
 }
 
 void CSideOneTurret::SetTuerretState(TurretState _State)
@@ -243,115 +252,110 @@ void CSideOneTurret::SetParent(CObj* _Parent)
 }
 void CSideOneTurret::CalcDistanceTarget()
 {
-	if (m_Target != NULL)
-	{
-		int temp = abs(int(m_Target->GetInfo().fX - m_tInfo.fX));
-		m_TargetPosState = Pos_None;
-		if (m_Target->GetInfo().fX > m_tInfo.fX)
-		{		//플레이어가 내 오른쪽에 있는 경우 [TargetPos : 1 ~ 5]
-			if (temp >= 135)
-			{
-
-				m_SFX_1.x = int(m_CenterPoint.getX() + 10);
-				m_SFX_1.y = int(m_CenterPoint.getY() - 15);
-
-				m_TargetPosState = Pos_9;
-			}
-			if (temp < 135)
-			{
-				m_SFX_1.x = int(m_CenterPoint.getX() + 7);
-				m_SFX_1.y = int(m_CenterPoint.getY() - 15);
-				m_TargetPosState = Pos_8;
-			}
-			if (temp < 75)
-			{
-				m_SFX_1.x = int(m_CenterPoint.getX() + 5);
-				m_SFX_1.y = int(m_CenterPoint.getY() - 15);
-				m_TargetPosState = Pos_7;
-			}
-			if (temp < 45)
-			{
-				m_SFX_1.x = int(m_CenterPoint.getX() + 2);
-				m_SFX_1.y = int(m_CenterPoint.getY() - 15);
-				m_TargetPosState = Pos_6;
-			}
-			if (temp < 15)
-			{
-				m_SFX_1.x = int(m_CenterPoint.getX());
-				m_SFX_1.y = int(m_CenterPoint.getY() - 8);
-				m_TargetPosState = Pos_5;
-			}
-		}
-		else
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("CSideTurret"), _T("UI_WeaponBox_Player is NULL"), m_Target == nullptr))
+		return;
+	int temp = abs(int(m_Target->GetInfo().fX - m_tInfo.fX));
+	m_TargetPosState = Pos_None;
+	if (m_Target->GetInfo().fX > m_tInfo.fX)
+	{		//플레이어가 내 오른쪽에 있는 경우 [TargetPos : 1 ~ 5]
+		if (temp >= 135)
 		{
-			if (temp >= 135)
-			{
-				m_SFX_1.x = int(m_CenterPoint.getX() - 10);
-				m_SFX_1.y = int(m_CenterPoint.getY() - 15);
-				m_TargetPosState = Pos_1;
-			}
-			if (temp < 135)
-			{
-				m_SFX_1.x = int(m_CenterPoint.getX() - 7);
-				m_SFX_1.y = int(m_CenterPoint.getY() - 15);
-				m_TargetPosState = Pos_3;
-			}
-			if (temp < 75)
-			{
-				m_SFX_1.x = int(m_CenterPoint.getX() - 5);
-				m_SFX_1.y = int(m_CenterPoint.getY() - 15);
-				m_TargetPosState = Pos_3;
-			}
-			if (temp < 45)
-			{
-				m_SFX_1.x = int(m_CenterPoint.getX() - 2);
-				m_SFX_1.y = int(m_CenterPoint.getY() - 15);
-				m_TargetPosState = Pos_4;
-			}
-			if (temp < 15)
-			{
-				m_SFX_1.x = int(m_CenterPoint.getX());
-				m_SFX_1.y = int(m_CenterPoint.getY() - 8);
-				m_TargetPosState = Pos_5;
-			}
-		}
-		if (m_TargetPosState >= Pos_1 && m_TargetPosState < Pos_4)
-		{
-			m_TurretType = TurretType_LEFT;
-			m_fAngle = 135.f;
-		}
-		if (m_TargetPosState >= Pos_4 && m_TargetPosState < Pos_7)
-		{
-			m_TurretType = TurretType_MID;
-			m_fAngle = 90.f;
-		}
-		if (m_TargetPosState >= Pos_7 && m_TargetPosState < Pos_None)
-		{
-			m_TurretType = TurretType_RIGHT;
-			m_fAngle = 45.f;
-		}
-		m_Posin_1.x = int(m_CenterPoint.getX() + m_PosinLength * cosf(m_fAngle*PI / 180.f));
-		m_Posin_1.y = int(m_CenterPoint.getY() - m_PosinLength * sinf(m_fAngle*PI / 180.f));
 
+			m_SFX_1.x = int(m_CenterPoint.getX() + 10);
+			m_SFX_1.y = int(m_CenterPoint.getY() - 15);
 
-		if ((m_TargetPosState == Pos_1) || (m_TargetPosState == Pos_2))
-			CurSFXFrame = 0;
-		if ((m_TargetPosState == Pos_3))
-			CurSFXFrame = 1;
-		if ((m_TargetPosState == Pos_4))
-			CurSFXFrame = 2;
-		if ((m_TargetPosState == Pos_5))
-			CurSFXFrame = 3;
-		if ((m_TargetPosState == Pos_6))
-			CurSFXFrame = 4;
-		if ((m_TargetPosState == Pos_7))
-			CurSFXFrame = 5;
-		if ((m_TargetPosState == Pos_8) || (m_TargetPosState == Pos_9))
-			CurSFXFrame = 6;
-
-		int TTTemp = 0;
-		TTTemp;
+			m_TargetPosState = Pos_9;
+		}
+		if (temp < 135)
+		{
+			m_SFX_1.x = int(m_CenterPoint.getX() + 7);
+			m_SFX_1.y = int(m_CenterPoint.getY() - 15);
+			m_TargetPosState = Pos_8;
+		}
+		if (temp < 75)
+		{
+			m_SFX_1.x = int(m_CenterPoint.getX() + 5);
+			m_SFX_1.y = int(m_CenterPoint.getY() - 15);
+			m_TargetPosState = Pos_7;
+		}
+		if (temp < 45)
+		{
+			m_SFX_1.x = int(m_CenterPoint.getX() + 2);
+			m_SFX_1.y = int(m_CenterPoint.getY() - 15);
+			m_TargetPosState = Pos_6;
+		}
+		if (temp < 15)
+		{
+			m_SFX_1.x = int(m_CenterPoint.getX());
+			m_SFX_1.y = int(m_CenterPoint.getY() - 8);
+			m_TargetPosState = Pos_5;
+		}
 	}
 	else
-		MessageBox(g_hWnd, _T("Target is NULL"), _T("CSideTurret"), MB_OK);
+	{
+		if (temp >= 135)
+		{
+			m_SFX_1.x = int(m_CenterPoint.getX() - 10);
+			m_SFX_1.y = int(m_CenterPoint.getY() - 15);
+			m_TargetPosState = Pos_1;
+		}
+		if (temp < 135)
+		{
+			m_SFX_1.x = int(m_CenterPoint.getX() - 7);
+			m_SFX_1.y = int(m_CenterPoint.getY() - 15);
+			m_TargetPosState = Pos_3;
+		}
+		if (temp < 75)
+		{
+			m_SFX_1.x = int(m_CenterPoint.getX() - 5);
+			m_SFX_1.y = int(m_CenterPoint.getY() - 15);
+			m_TargetPosState = Pos_3;
+		}
+		if (temp < 45)
+		{
+			m_SFX_1.x = int(m_CenterPoint.getX() - 2);
+			m_SFX_1.y = int(m_CenterPoint.getY() - 15);
+			m_TargetPosState = Pos_4;
+		}
+		if (temp < 15)
+		{
+			m_SFX_1.x = int(m_CenterPoint.getX());
+			m_SFX_1.y = int(m_CenterPoint.getY() - 8);
+			m_TargetPosState = Pos_5;
+		}
+	}
+	if (m_TargetPosState >= Pos_1 && m_TargetPosState < Pos_4)
+	{
+		m_TurretType = TurretType_LEFT;
+		m_fAngle = 135.f;
+	}
+	if (m_TargetPosState >= Pos_4 && m_TargetPosState < Pos_7)
+	{
+		m_TurretType = TurretType_MID;
+		m_fAngle = 90.f;
+	}
+	if (m_TargetPosState >= Pos_7 && m_TargetPosState < Pos_None)
+	{
+		m_TurretType = TurretType_RIGHT;
+		m_fAngle = 45.f;
+	}
+	m_Posin_1.x = int(m_CenterPoint.getX() + m_PosinLength * cosf(m_fAngle*PI / 180.f));
+	m_Posin_1.y = int(m_CenterPoint.getY() - m_PosinLength * sinf(m_fAngle*PI / 180.f));
+
+
+	if ((m_TargetPosState == Pos_1) || (m_TargetPosState == Pos_2))
+		CurSFXFrame = 0;
+	if ((m_TargetPosState == Pos_3))
+		CurSFXFrame = 1;
+	if ((m_TargetPosState == Pos_4))
+		CurSFXFrame = 2;
+	if ((m_TargetPosState == Pos_5))
+		CurSFXFrame = 3;
+	if ((m_TargetPosState == Pos_6))
+		CurSFXFrame = 4;
+	if ((m_TargetPosState == Pos_7))
+		CurSFXFrame = 5;
+	if ((m_TargetPosState == Pos_8) || (m_TargetPosState == Pos_9))
+		CurSFXFrame = 6;
+
 }

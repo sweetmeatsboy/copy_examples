@@ -205,6 +205,12 @@
     <Filter Include="UI\WeaponBox">
       <UniqueIdentifier>{38695996-609c-46d5-be19-b14529bad599}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ErrorMgr">
+      <UniqueIdentifier>{f83860a1-6af5-49b8-bc4e-3d411944771f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileMgr">
+      <UniqueIdentifier>{21341dcf-ef62-425d-b074-404e749f91a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -423,6 +429,12 @@
     <ClInclude Include="UIMgr.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="ErrorMgr.h">
+      <Filter>ErrorMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="FileMgr.h">
+      <Filter>FileMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -625,6 +637,12 @@
     </ClCompile>
     <ClCompile Include="UIMgr.cpp">
       <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ErrorMgr.cpp">
+      <Filter>ErrorMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="FileMgr.cpp">
+      <Filter>FileMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

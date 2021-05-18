@@ -19,7 +19,8 @@ void CP_H::Initialize(void)
 	m_Speed_Y = 9.f;
 	m_DeltaCount = 0;		//총알이 이동한 거리를 잴때 사용한다.
 	m_isLeft = false;
-	m_Ani = CAniInfoMgr::Getinst()->GetPlayer_Weapon_AniSet(_T("P_W_H"));
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_Weapon_AniSet"), _T("P_W_H"));
+	//m_Ani = CAniInfoMgr::Getinst()->GetPlayer_Weapon_AniSet(_T("P_W_H"));
 	isDead = false;
 
 	//현재 라인 정보 설정.

@@ -146,8 +146,8 @@ void CBossBigBullet::Initialize(void)
 	m_Line_List = CMapMgr::GetInst()->GetMapLineInfo();
 	SelectedLine = NULL;
 	m_CurLine = NULL;
-
-	m_Ani = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BIG_CANON_BULLET_1"));
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("BIG_CANON_BULLET_1"));
+	//m_Ani = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BIG_CANON_BULLET_1"));
 	m_CurFrame = 0;
 	m_AniTimer = GetTickCount();
 	PlayerIsMyLeft = false;
@@ -189,5 +189,6 @@ void CBossBigBullet::Release(void)
 }
 void CBossBigBullet::SetAniName(const TCHAR* _Name)	//애니메이션 설정용.
 {
-	m_Ani = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_Name);
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _Name);
+	//m_Ani = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_Name);
 }

@@ -186,8 +186,8 @@ void CBossNomalBullet::Initialize(void)
 	m_Line_List = CMapMgr::GetInst()->GetMapLineInfo();
 	SelectedLine = NULL;
 	m_CurLine = NULL;
-
-	m_Ani = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_BULLET"));
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_BULLET"));
+	//m_Ani = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_BULLET"));
 	m_CurFrame = 0;
 	m_AniTimer = GetTickCount();
 	PlayerIsMyLeft = false;

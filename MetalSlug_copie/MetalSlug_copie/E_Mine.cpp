@@ -152,8 +152,8 @@ void CE_Mine::Initialize(void)
 	m_Line_List = CMapMgr::GetInst()->GetMapLineInfo();
 	SelectedLine = NULL;
 	m_CurLine = NULL;
-
-	m_Ani = CAniInfoMgr::Getinst()->GetEnemy_Weapon_AniSet(_T("EW_MINE"));
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Enemy_Weapon_AniSet"), _T("EW_MINE"));
+	//m_Ani = CAniInfoMgr::Getinst()->GetEnemy_Weapon_AniSet(_T("EW_MINE"));
 	m_CurFrame = 0;
 	m_AniTimer = GetTickCount();
 	PlayerIsMyLeft = false;

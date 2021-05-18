@@ -138,6 +138,7 @@
     <ClInclude Include="UDPSocket.h" />
     <ClInclude Include="WeightedTimedMovingAverage.h" />
     <ClInclude Include="World.h" />
+    <ClInclude Include="Yarn.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameObject.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="Timing.cpp" />
     <ClCompile Include="UDPSocket.cpp" />
     <ClCompile Include="World.cpp" />
+    <ClCompile Include="Yarn.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

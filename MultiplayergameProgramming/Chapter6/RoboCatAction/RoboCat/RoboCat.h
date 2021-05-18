@@ -1,5 +1,5 @@
 #pragma once
-class RoboCat : GameObject
+class RoboCat : public GameObject
 {
 private:
 	float mMaxLinearSpeed;

@@ -40,7 +40,7 @@ void RoboCat::AdjustVelocityByThrust(float _delta)
 void RoboCat::SimulateMovement(float _deltaTime)
 {
 	AdjustVelocityByThrust(_deltaTime);
-	SetLocation(Getlocation() + mVelocity * _deltaTime);
+	SetLocation(GetLocation() + mVelocity * _deltaTime);
 	ProcessCollisions();
 }
 
@@ -53,7 +53,7 @@ void RoboCat::ProcessCollisions()
 	ProcessCollisionsWithScreenWalls();
 
 	float sourceRadius = GetCollisionRadius();
-	Vector3 loc = Getlocation();
+	Vector3 loc = GetLocation();
 
 	for (auto golt = World::sInstance->GetGameObjects().begin()
 		, end = World::sInstance->GetGameObjects().end(); golt!= end; ++golt)
@@ -64,7 +64,7 @@ void RoboCat::ProcessCollisions()
 		if (target->DoesWantToDie())
 			continue;
 
-		Vector3 tLoc = target->Getlocation();
+		Vector3 tLoc = target->GetLocation();
 		float tRadius = target->GetCollisionRadius();
 
 		Vector3 delta = tLoc - loc;
@@ -106,7 +106,7 @@ void RoboCat::ProcessCollisions()
 
 void RoboCat::ProcessCollisionsWithScreenWalls()
 {
-	Vector3 loc = Getlocation();
+	Vector3 loc = GetLocation();
 	float x = loc.x;
 	float y = loc.y;
 

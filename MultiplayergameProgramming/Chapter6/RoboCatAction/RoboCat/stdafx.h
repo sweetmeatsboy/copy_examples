@@ -86,3 +86,4 @@ class GameObject;
 #include "RoboCat.h"
 #include "ScoreBoardManager.h"
 
+#include "Yarn.h"

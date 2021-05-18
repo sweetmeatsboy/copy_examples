@@ -128,6 +128,7 @@
     <ClInclude Include="Move.h" />
     <ClInclude Include="MoveList.h" />
     <ClInclude Include="NetworkManager.h" />
+    <ClInclude Include="ReplicationCommand.h" />
     <ClInclude Include="RoboCat.h" />
     <ClInclude Include="RoboMath.h" />
     <ClInclude Include="ScoreBoardManager.h" />

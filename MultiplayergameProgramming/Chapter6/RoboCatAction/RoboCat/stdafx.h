@@ -88,3 +88,4 @@ class GameObject;
 
 #include "Yarn.h"
 #include "Engine.h"
+#include "ReplicationCommand.h"

@@ -82,3 +82,5 @@ class GameObject;
 #include "Mouse.h"
 #include "Move.h"
 #include "MoveList.h"
+
+#include "RoboCat.h"

@@ -125,6 +125,7 @@
     <ClInclude Include="Move.h" />
     <ClInclude Include="MoveList.h" />
     <ClInclude Include="NetworkManager.h" />
+    <ClInclude Include="RoboCat.h" />
     <ClInclude Include="RoboMath.h" />
     <ClInclude Include="SocketAddress.h" />
     <ClInclude Include="SocketAddressFactory.h" />
@@ -146,6 +147,7 @@
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="MoveList.cpp" />
     <ClCompile Include="NetworkManager.cpp" />
+    <ClCompile Include="RoboCat.cpp" />
     <ClCompile Include="RoboMath.cpp" />
     <ClCompile Include="SocketAddress.cpp" />
     <ClCompile Include="SocketAddressFactory.cpp" />

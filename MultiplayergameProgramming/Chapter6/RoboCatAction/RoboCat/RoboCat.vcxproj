@@ -130,6 +130,7 @@
     <ClInclude Include="NetworkManager.h" />
     <ClInclude Include="ReplicationCommand.h" />
     <ClInclude Include="RoboCat.h" />
+    <ClInclude Include="RoboCatShared.h" />
     <ClInclude Include="RoboMath.h" />
     <ClInclude Include="ScoreBoardManager.h" />
     <ClInclude Include="SocketAddress.h" />

@@ -31,6 +31,7 @@ CFrameDC::CFrameDC()
 }
 
 CFrameDC::CFrameDC(CRc _rc, CPt _pt, DWORD _color)
+	: m_dwColor(_color)
 {
 	SetFrameRect(_rc);
 	SetCenterPoint(_pt);

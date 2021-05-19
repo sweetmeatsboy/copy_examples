@@ -82,3 +82,10 @@ class GameObject;
 #include "Mouse.h"
 #include "Move.h"
 #include "MoveList.h"
+
+#include "RoboCat.h"
+#include "ScoreBoardManager.h"
+
+#include "Yarn.h"
+#include "Engine.h"
+#include "ReplicationCommand.h"

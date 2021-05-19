@@ -66,7 +66,7 @@ public:
 		return mScale;
 	}
 
-	const Vector3& Getlocation() const 
+	const Vector3& GetLocation() const 
 	{
 		return mLocation;
 	}
@@ -90,7 +90,7 @@ public:
 	{
 		mColor = _color;
 	}
-	const Vector3 GetColor() const
+	const Vector3& GetColor() const
 	{
 		return mColor;
 	}

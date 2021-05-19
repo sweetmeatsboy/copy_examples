@@ -17,7 +17,7 @@ uint32_t Mouse::Write(OutputMemoryBitStream& _in, uint32_t _dState)const
 	if (_dState & EMRS_Pose)
 	{
 		_in.Write((bool)true);
-		Vector3 loc = Getlocation();
+		Vector3 loc = GetLocation();
 		_in.Write(loc.x);
 		_in.Write(loc.y);
 

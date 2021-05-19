@@ -18,7 +18,7 @@ public:
 	{
 		return mSocketAddress;
 	}
-	int getPlayerId() const
+	int GetPlayerId() const
 	{
 		return mPlayerId;
 	}

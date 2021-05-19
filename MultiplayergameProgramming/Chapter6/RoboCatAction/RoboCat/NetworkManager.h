@@ -66,7 +66,7 @@ public:
 	void ProcessIncomingPackets();
 
 	virtual void ProcessPacket(InputMemoryBitStream& _stream, const SocketAddress& _from) = 0;
-	virtual void HandleConnectinReset(const SocketAddress& _from)
+	virtual void HandleConnectionReset(const SocketAddress& _from)
 	{
 		(void)_from;
 	}

@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{8C3CB0AC-E5E2-4FED-8668-8C8CCBBEF331}</ProjectGuid>
+    <ProjectGuid>{DEF1708B-EB3D-40B4-A85E-AD931FE78F62}</ProjectGuid>
     <RootNamespace>RoboCatServer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -70,15 +70,21 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Git\sweetmeatsboy\copy_examples\MultiplayergameProgramming\Chapter6\RoboCatAction\RoboCat;D:\Git\sweetmeatsboy\copy_examples\MultiplayergameProgramming\Chapter6\RoboCatAction\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>RoboCatServerPCH.h</PrecompiledHeaderFile>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\SDL\lib\win\x86</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
@@ -115,6 +121,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ClientProxy.h" />
+    <ClInclude Include="NetworkManagerServer.h" />
+    <ClInclude Include="ReplicationManagerServer.h" />
+    <ClInclude Include="RoboCatServerPCH.h" />
+    <ClInclude Include="Server.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ClientProxy.cpp" />
+    <ClCompile Include="NetworkManagerServer.cpp" />
+    <ClCompile Include="ReplicationManagerServer.cpp" />
+    <ClCompile Include="RoboCatServerPCH.cpp" />
+    <ClCompile Include="Server.cpp" />
+    <ClCompile Include="ServerMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RoboCat\RoboCat.vcxproj">
+      <Project>{a636d961-faee-4403-b220-d7582a29b2ae}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

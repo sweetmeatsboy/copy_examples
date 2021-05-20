@@ -38,7 +38,7 @@ public:
 		return mReplicationManagerServer;
 	}
 
-	const MoveList& GetUnprodessedMoveList() const
+	const MoveList& GetUnprocessedMoveList() const
 	{
 		return mUnprocessedMoveList;
 	}

@@ -31,9 +31,10 @@ private:
 	void SendStatePacketToClient(ClientProxyPtr _cp);
 	void WriteLAstMoveTimestampDirty(OutputMemoryBitStream& _in, ClientProxyPtr _cp);
 
-	void handleClientDisconnected(ClientProxyPtr _cp);
+	void HandleInputPacket(ClientProxyPtr _cp, InputMemoryBitStream& _in);
+	void HandleClientDisconnected(ClientProxyPtr _cp);
 
-	int GetNetworkId();
+	int GetNewNetworkId();
 public:
 	static NetworkManagerServer* sInstance;
 

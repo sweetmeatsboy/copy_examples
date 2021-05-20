@@ -4,19 +4,18 @@
 void CStage_1::Initialize()
 {
 	MainDC = GetDC(g_hWnd);
-
+	float startX = 100.f;
+	float startY = 1700.f;
 	//敲饭捞绢 汲沥.
 	if (CObjMgr::GetInst()->GetObjList(OBJ_PLAYER)->empty() == true)
 	{
-		m_pPlayer = CObjFactory<CPlayer>::CreateObj(100.f, 1700.f);
+		m_pPlayer = CObjFactory<CPlayer>::CreateObj(startX, startY);
 		CObjMgr::GetInst()->GetObjList(OBJ_PLAYER)->push_back(m_pPlayer);
 	}
-	else
-	{
-		m_pPlayer = CObjMgr::GetInst()->GetObjList(OBJ_PLAYER)->front();
-		m_pPlayer->SetPos(100.f, 1700.f);
-		((CPlayer*)m_pPlayer)->SetPosCurPlayer(100.f, 1700.f);
-	}
+	m_pPlayer = CObjMgr::GetInst()->GetObjList(OBJ_PLAYER)->front();
+	m_pPlayer->SetPos(startX, startY);
+//	((CPlayer*)m_pPlayer)->SetPosCurPlayer(100.f, 1700.f);
+
 	m_BackBufferDC = CResourceMgr::GetInst()->GetBitDCMap("Stage_1_BackBuffer")->GetMemDC();
 	m_BackGroundDC = CResourceMgr::GetInst()->GetBitDCMap("Stage_1_BackGround")->GetMemDC();
 
@@ -74,7 +73,10 @@ void CStage_1::Progress()
 {
 	CObjMgr::GetInst()->Progress();
 	CCollisionMgr::Getinst()->Progress();
-	if (m_pPlayer->GetCenterPoint().getX() >= 0 && m_pPlayer->GetCenterPoint().getX() < 400)
+	float mX = m_pPlayer->GetCenterPoint().getX();
+	float mY = m_pPlayer->GetCenterPoint().getY();
+	auto monsterListEmpty = CObjMgr::GetInst()->GetObjList(OBJ_MONSTER)->empty();
+	if (mX  >= 0 && mX  < 400)
 	{
 		InsertWave_1();
 		InsertWave_2();
@@ -83,96 +85,75 @@ void CStage_1::Progress()
 		InsertWave_5();
 		InsertWave_6();
 		InsertWave_7();
-		m_Cam.Setfocus(int(m_pPlayer->GetCenterPoint().getX() - WINCX / 2.f), 1400);
+		m_Cam.Setfocus(int(mX  - WINCX / 2.f), 1400);
 	}
-	if (m_pPlayer->GetCenterPoint().getX() >= 400 && m_pPlayer->GetCenterPoint().getX() < 1200)
+	if (mX  >= 400 && mX  < 1200)
 	{
-
-		if (CObjMgr::GetInst()->GetObjList(OBJ_MONSTER)->empty() == false)	//备埃 郴 葛电 利焙 贸府
+		if (monsterListEmpty == false)	//备埃 郴 葛电 利焙 贸府
 			m_Cam.Setfocus(400, 1400);
 		else
-		{
-			m_Cam.Setfocus(int(m_pPlayer->GetCenterPoint().getX() - WINCX / 2.f), 1400);
-		}
-
+			m_Cam.Setfocus(int(mX  - WINCX / 2.f), 1400);
 	}
-	if (m_pPlayer->GetCenterPoint().getX() >= 1200 && m_pPlayer->GetCenterPoint().getX() < 2100)
+	if (mX  >= 1200 && mX  < 2100)
 	{
-
-		if (CObjMgr::GetInst()->GetObjList(OBJ_MONSTER)->empty() == false)	//备埃 郴 葛电 利焙 贸府
+		if (monsterListEmpty == false)	//备埃 郴 葛电 利焙 贸府
 			m_Cam.Setfocus(400, 1400);
 		else
-		{
-			m_Cam.Setfocus(int(m_pPlayer->GetCenterPoint().getX() - WINCX / 2.f), 1400);
-		}
-
+			m_Cam.Setfocus(int(mX  - WINCX / 2.f), 1400);
 	}
-	if (m_pPlayer->GetCenterPoint().getX() >= 2100 && m_pPlayer->GetCenterPoint().getX() < 2300)
+	if (mX  >= 2100 && mX  < 2300)
 	{
-
-		if (CObjMgr::GetInst()->GetObjList(OBJ_MONSTER)->empty() == false)	//备埃 郴 葛电 利焙 贸府
+		if (monsterListEmpty == false)	//备埃 郴 葛电 利焙 贸府
 			m_Cam.Setfocus(2100, 1430);
 		else
-		{
-			m_Cam.Setfocus(int(m_pPlayer->GetCenterPoint().getX() - WINCX / 2.f), 1430);
-		}
+			m_Cam.Setfocus(int(mX  - WINCX / 2.f), 1430);
 	}
-	if (m_pPlayer->GetCenterPoint().getX() >= 2300 && m_pPlayer->GetCenterPoint().getX() < 2962)
+	if (mX  >= 2300 && mX  < 2962)
 	{
-		m_Cam.Setfocus(int(m_pPlayer->GetCenterPoint().getX() - WINCX / 2.f), int(m_pPlayer->GetCenterPoint().getY() - WINCY / 2.f - 150));
+		m_Cam.Setfocus(int(mX  - WINCX / 2.f), int(mY - WINCY / 2.f - 150));
 	}
-	if (m_pPlayer->GetCenterPoint().getX() >= 2962 && m_pPlayer->GetCenterPoint().getX() < 3700)
+	if (mX  >= 2962 && mX  < 3700)
 	{
-		if (CObjMgr::GetInst()->GetObjList(OBJ_MONSTER)->empty() == false)	//备埃 郴 葛电 利焙 贸府
+		if (monsterListEmpty == false)	//备埃 郴 葛电 利焙 贸府
 			m_Cam.Setfocus(2962, 800);
 		else
-		{
-			m_Cam.Setfocus(int(m_pPlayer->GetCenterPoint().getX() - WINCX / 2.f), 800);
-		}
+			m_Cam.Setfocus(int(mX  - WINCX / 2.f), 800);
 	}
-	if (m_pPlayer->GetCenterPoint().getX() >= 3700 && m_pPlayer->GetCenterPoint().getX() < 4260.f)
+	if (mX  >= 3700 && mX  < 4260.f)
 	{
-		if (CObjMgr::GetInst()->GetObjList(OBJ_MONSTER)->empty() == false)	//备埃 郴 葛电 利焙 贸府
+		if (monsterListEmpty == false)	//备埃 郴 葛电 利焙 贸府
 			m_Cam.Setfocus(3700, 800);
 		else
-		{
-			m_Cam.Setfocus(int(m_pPlayer->GetCenterPoint().getX() - WINCX / 2.f),
-				int(m_pPlayer->GetCenterPoint().getY() - WINCY / 2.f) - 250);
-		}
+			m_Cam.Setfocus(int(mX  - WINCX / 2.f), int(mY - WINCY / 2.f) - 250);
 	}
-	if (m_pPlayer->GetCenterPoint().getX() >= 4260.f && m_pPlayer->GetCenterPoint().getX() < 4780)
+	if (mX  >= 4260.f && mX  < 4780)
 	{
-		if (CObjMgr::GetInst()->GetObjList(OBJ_MONSTER)->empty() == false)	//备埃 郴 葛电 利焙 贸府
+		if (monsterListEmpty == false)	//备埃 郴 葛电 利焙 贸府
 			m_Cam.Setfocus(4260, 570);
 	}
-	if (m_pPlayer->GetCenterPoint().getX() >= 4780.f && m_pPlayer->GetCenterPoint().getX() < 5900.f)
+	if (mX  >= 4780.f && mX  < 5900.f)
 	{
-		if (CObjMgr::GetInst()->GetObjList(OBJ_MONSTER)->empty() == false)	//备埃 郴 葛电 利焙 贸府
+		if (monsterListEmpty == false)	//备埃 郴 葛电 利焙 贸府
 			m_Cam.Setfocus(4700, 570);
 		else
-		{
-			m_Cam.Setfocus(int(m_pPlayer->GetCenterPoint().getX() - WINCX / 2.f), 570.f);
-		}
+			m_Cam.Setfocus(int(mX  - WINCX / 2.f), 570.f);
 	}
 
-	if (m_pPlayer->GetCenterPoint().getX() >= 5900.f)
+	if (mX  >= 5900.f &&mX <7110.f)
 	{
-		if (CObjMgr::GetInst()->GetObjList(OBJ_MONSTER)->empty() == false)	//备埃 郴 葛电 利焙 贸府
+		if (monsterListEmpty == false)	//备埃 郴 葛电 利焙 贸府
 			m_Cam.Setfocus(5900, 70);
 		else
-			m_Cam.Setfocus(int(m_pPlayer->GetCenterPoint().getX() - WINCX / 2.f), 0);
+			m_Cam.Setfocus(int(mX  - WINCX / 2.f), 0);
 	}
 	else
 	{
-		m_Cam.Setfocus(int(m_pPlayer->GetCenterPoint().getX() - WINCX / 2.f),
-			int(m_pPlayer->GetCenterPoint().getY() - WINCY / 2.f));
+		m_Cam.Setfocus(int(mX  - WINCX / 2.f), int(mY - WINCY / 2.f));
 	}
 	m_UI->Progress();
 
-	if (m_pPlayer->GetCenterPoint().getX() >= 7110.f)
-	{
+	if (mX  >= 7110.f)
 		CSceneMgr::GetInst()->SetStage(STAGE_2);
-	}
 
 }
 void CStage_1::Render()

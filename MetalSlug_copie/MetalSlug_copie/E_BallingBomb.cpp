@@ -167,7 +167,9 @@ void CE_BallingBomb::Initialize(void)
 	SelectedLine = NULL;
 	m_CurLine = NULL;
 
-	m_Ani = CAniInfoMgr::Getinst()->GetEnemy_Weapon_AniSet(_T("EW_BALLING_BOMB"));
+	//m_Ani = CAniInfoMgr::Getinst()->GetEnemy_Weapon_AniSet(_T("EW_BALLING_BOMB"));
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Enemy_Weapon_AniSet"), _T("EW_BALLING_BOMB"));
+
 	m_CurFrame = 0;
 	m_AniTimer = GetTickCount();
 	PlayerIsMyLeft = false;

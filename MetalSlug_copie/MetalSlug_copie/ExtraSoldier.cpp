@@ -263,8 +263,8 @@ void CExtraSoldier::CheckCollision(CObj* _Something)
 
 void CExtraSoldier::SetAniName(const TCHAR* _Name)
 {
-	m_ExtraSoldierAni =
-		CAniInfoMgr::Getinst()->GetNormal_Soldier_AniSet(_Name);
+	m_ExtraSoldierAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Nomal_Soldier_AniSet"), _Name);
+	//m_ExtraSoldierAni = CAniInfoMgr::Getinst()->GetNormal_Soldier_AniSet(_Name);
 	CurFrame = 0;
 	MaxFrameCount = m_ExtraSoldierAni->GetFrameCount();
 }

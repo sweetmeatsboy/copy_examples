@@ -67,7 +67,8 @@ void CN_Item::SetNomalItemName(const TCHAR* _Name)
 		Score = 100;
 	}
 
-	m_Ani = CAniInfoMgr::Getinst()->Get_ETC_Item_AniSet(_Name);
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Item_AniSet"), _Name);
+	//m_Ani = CAniInfoMgr::Getinst()->Get_ETC_Item_AniSet(_Name);
 	m_MaxFrame = m_Ani->GetFrameCount() - 1;
 	m_dwFrameTimer = GetTickCount();
 }

@@ -45,8 +45,11 @@ void CSceneMgr::SetStage(STAGE_STATE _stageNum)
 		//			m_CurStage = new CStage_Ending();
 		break;
 	}
-	if (GetInst()->m_CurStage == NULL)
-		MessageBox(g_hWnd, _T("Stage전환 오류"), _T("SceneMgr"), MB_OK);
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("SceneMgr"), _T("Stage전환 오류"), GetInst()->m_CurStage == nullptr))
+		return;
+
+	//if (GetInst()->m_CurStage == NULL)
+	//	MessageBox(g_hWnd, _T("Stage전환 오류"), _T("SceneMgr"), MB_OK);
 }
 void CSceneMgr::Progress()
 {

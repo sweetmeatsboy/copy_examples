@@ -29,49 +29,42 @@ void CSprite::LoadData(const TCHAR* _name)
 	DWORD dwRead = 0;
 	HANDLE hFile = CreateFile(_name, GENERIC_READ
 		, 0, 0, OPEN_EXISTING, 0, nullptr);
-	if (hFile == nullptr)
-	{
-		MessageBox(g_hWnd, _T("파일개방오류"), _T("오류"), MB_OK);
+	
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_name, _T("file open failed"), hFile == nullptr))
 		return;
-	}
 
 	DWORD dwColor = 0;
-	ReadFile(hFile, &dwColor, sizeof(DWORD), &dwRead, nullptr);
+	auto no_error = FileMgr::GetInst().ReadFromFile(hFile, dwColor);
+	//ReadFile(hFile, &dwColor, sizeof(DWORD), &dwRead, nullptr);
 	m_dwBackColor = dwColor;
 
-	if (dwRead != sizeof(DWORD))
-	{
-		MessageBox(g_hWnd, _T("loadData() error!"), _T("오류"), MB_OK);
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("loadData"), _T("error - 1"), no_error == false))
 		return;
-	}
 
-	vector<CScene*>::size_type cnt = 0;
-	ReadFile(hFile, &cnt, sizeof(cnt), &dwRead, nullptr);
+	DWORD cnt = 0;
+	//vector<CScene*>::size_type cnt = 0;
+	no_error = FileMgr::GetInst().ReadFromFile(hFile, cnt);
+	//ReadFile(hFile, &cnt, sizeof(cnt), &dwRead, nullptr);
 
-	if (dwRead != sizeof(cnt))
-	{
-		MessageBox(g_hWnd, _T("loadData() error!"), _T("오류"), MB_OK);
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("loadData"), _T("error - 2"), no_error == false))
 		return;
-	}
 
 	CScene tmpScene;
-	for(vector<CScene*>::size_type i =0; i<cnt; i++)
+	for(DWORD i =0; i<cnt; i++)
 	{
 		LoadScene(hFile, tmpScene);
 		m_vScenes.push_back(new CScene(tmpScene));
 	}
 
-	vector<CAnimate*>::size_type cnt2 = 0;
-	ReadFile(hFile, &cnt, sizeof(cnt2), &dwRead, nullptr);
+	//vector<CAnimate*>::size_type cnt2 = 0;
+	//ReadFile(hFile, &cnt, sizeof(cnt2), &dwRead, nullptr);
+	no_error = FileMgr::GetInst().ReadFromFile(hFile, cnt);
 
-	if (dwRead != sizeof(cnt2))
-	{
-		MessageBox(g_hWnd, _T("loadData() error2!"), _T("오류"), MB_OK);
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("loadData"), _T("error - 3"), no_error == false))
 		return;
-	}
 
 	CAnimate tmpAni;
-	for (vector<CAnimate*>::size_type i = 0; i < cnt2; i++)
+	for (vector<CAnimate*>::size_type i = 0; i < cnt; i++)
 	{
 		LoadAnimate(hFile, tmpAni);
 		m_vAnimates.push_back(new CAnimate(tmpAni));
@@ -82,24 +75,19 @@ void CSprite::LoadData(const TCHAR* _name)
 
 void CSprite::LoadPoint(HANDLE _hFile, CPt& _pt)
 {
-	DWORD dwRead = 0;
+	//DWORD dwRead = 0;
 	CPt::PT_TYPE data = 0;
-
-	ReadFile(_hFile, &data, sizeof(CPt::PT_TYPE), &dwRead, nullptr);
-	if (sizeof(CPt::PT_TYPE) != dwRead)
-	{
-		MessageBox(g_hWnd, _T("ReadPoint() error _1"), _T("오류"), MB_OK);
+	
+	auto no_err = FileMgr::GetInst().ReadFromFile(_hFile, data);
+//	ReadFile(_hFile, &data, sizeof(CPt::PT_TYPE), &dwRead, nullptr);
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("ReadPoint!"), _T("error - 1"), no_err == false ))
 		return;
-	}
 
 	_pt.setX(data);
-
-	ReadFile(_hFile, &data, sizeof(CPt::PT_TYPE), &dwRead, nullptr);
-	if (sizeof(CPt::PT_TYPE) != dwRead)
-	{
-		MessageBox(g_hWnd, _T("ReadPoint() error _2"), _T("오류"), MB_OK);
+	no_err = FileMgr::GetInst().ReadFromFile(_hFile, data = 0);
+	//ReadFile(_hFile, &data, sizeof(CPt::PT_TYPE), &dwRead, nullptr);
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("ReadPoint!"), _T("error - 2"), no_err == false))
 		return;
-	}
 
 	_pt.setY(data);
 }
@@ -131,17 +119,15 @@ void CSprite::LoadScene(HANDLE _hFile, CScene& _s)
 	_s.setMainPoint(pt);
 
 	DWORD dwRead = 0;
-	vector<CRc*>::size_type cnt = 0;
+	DWORD cnt = 0;
+	//vector<CRc*>::size_type cnt = 0;
+	
+	auto no_err = FileMgr::GetInst().ReadFromFile(_hFile, cnt);
 
-	ReadFile(_hFile, &cnt, sizeof(cnt), &dwRead, nullptr);
-
-	if (dwRead != sizeof(cnt))
-	{
-		MessageBox(g_hWnd, _T("LoadScene() error!"), _T("오류"), MB_OK);
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("LoadScene!"), _T("error - 2"), no_err == false))
 		return;
-	}
 
-	for (int i = 0; i < cnt; i++)
+	for (DWORD i = 0; i < cnt; i++)
 	{
 		rc = CRc(0, 0, 0, 0);
 		LoadRect(_hFile, rc);
@@ -152,16 +138,24 @@ void CSprite::LoadScene(HANDLE _hFile, CScene& _s)
 void CSprite::LoadAnimate(HANDLE _h, CAnimate& _ani)
 {
 	_ani.clearScenes();
-	int cnt = 0;
-	int idx = 0;
+	DWORD cnt = 0;
 
-	DWORD dwRead = 0;
-	ReadFile(_h, &cnt, sizeof(cnt), &dwRead, nullptr);
+	auto no_err = FileMgr::GetInst().ReadFromFile(_h, cnt);
+	//ReadFile(_h, &cnt, sizeof(cnt), &dwRead, nullptr);
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("LoadAnimate"), _T("failed"), no_err == false))
+		return;
 
-	CAnimate::tagScene tmp;
-	for (idx = 0; idx < cnt; idx++)
+	for (int idx = 0; idx < cnt; idx++)
 	{
-		ReadFile(_h, &tmp, sizeof(tmp), &dwRead, nullptr);
-		_ani.addScene(tmp.m_dwIndex, tmp.m_dwOutputTime);
+		//ReadFile(_h, &tmp, sizeof(tmp), &dwRead, nullptr);
+		DWORD dwIdx = 0;
+		DWORD dwOutputTime = 0;
+		no_err = FileMgr::GetInst().ReadFromFile(_h, dwIdx);
+		if (ErrorMgr::GetInst().ErrBoxPopupT(_T("Make Scene"), _T("failed"), no_err == false))
+			return;
+		no_err = FileMgr::GetInst().ReadFromFile(_h, dwOutputTime);
+		if (ErrorMgr::GetInst().ErrBoxPopupT(_T("Make Scene"), _T("failed"), no_err == false))
+			return;
+		_ani.addScene(dwIdx, dwOutputTime);
 	}
 }

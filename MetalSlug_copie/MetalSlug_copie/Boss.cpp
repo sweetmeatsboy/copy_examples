@@ -123,23 +123,41 @@ void CBoss::Initialize(void)
 	m_PartsList.push_back(m_Side_One_Turret_2);
 	m_PartsList.push_back(m_Side_One_Turret_3);
 	//애니메이션 설정 부분.
-
+	m_FrontWheelAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("WHELE_PARTS_FRONT"));
+	m_BackWheelAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("WHELE_PARTS_BACK"));
+	m_RightRadar = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("RADAR_PARTS_1"));
+	m_LeftRadar = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("RADAR_PARTS_2"));
+/*
 	m_FrontWheelAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("WHELE_PARTS_FRONT"));
 	m_BackWheelAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("WHELE_PARTS_BACK"));
 	m_RightRadar = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("RADAR_PARTS_1"));
-	m_LeftRadar = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("RADAR_PARTS_2"));
+	m_LeftRadar = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("RADAR_PARTS_2"));*/
 
-	m_BossHead = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->GetFrameInfoByIdx(0)->m_Frame;	//선미 부분
-	m_BossBody = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->GetFrameInfoByIdx(14)->m_Frame;	//사령탑 부분
-	m_BossTail = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->GetFrameInfoByIdx(6)->m_Frame;	//배기구 부분.
+	auto bodyPart = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("BODY_PARTS"));
+	m_BossHead = bodyPart->GetFrameInfoByIdx(0)->m_Frame;
+	m_BossBody = bodyPart->GetFrameInfoByIdx(14)->m_Frame;
+	m_BossTail = bodyPart->GetFrameInfoByIdx(6)->m_Frame;
 
-	m_Broken_Side_Turret_1 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(2)->m_Frame;
-	m_Broken_Side_Turret_2 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(1)->m_Frame;
-	m_Broken_Side_Turret_3 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(4)->m_Frame;
-	m_Broken_Side_Turret_4 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(7)->m_Frame;
-	m_Broken_Side_One_Turret_1 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(3)->m_Frame;
-	m_Broken_Side_One_Turret_2 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(5)->m_Frame;
-	m_Broken_Side_One_Turret_3 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(6)->m_Frame;
+	//m_BossHead = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->GetFrameInfoByIdx(0)->m_Frame;	//선미 부분
+	//m_BossBody = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->GetFrameInfoByIdx(14)->m_Frame;	//사령탑 부분
+	//m_BossTail = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->GetFrameInfoByIdx(6)->m_Frame;	//배기구 부분.
+
+	auto m_Broken_Side = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("BROKEN_BODY_PARTS"));
+	m_Broken_Side_Turret_1 = m_Broken_Side->GetFrameInfoByIdx(2)->m_Frame;
+	m_Broken_Side_Turret_2 = m_Broken_Side->GetFrameInfoByIdx(1)->m_Frame;
+	m_Broken_Side_Turret_3 = m_Broken_Side->GetFrameInfoByIdx(4)->m_Frame;
+	m_Broken_Side_Turret_4 = m_Broken_Side->GetFrameInfoByIdx(7)->m_Frame;
+	m_Broken_Side_One_Turret_1 = m_Broken_Side->GetFrameInfoByIdx(3)->m_Frame;
+	m_Broken_Side_One_Turret_2 = m_Broken_Side->GetFrameInfoByIdx(5)->m_Frame;
+	m_Broken_Side_One_Turret_3 = m_Broken_Side->GetFrameInfoByIdx(6)->m_Frame;
+
+	//m_Broken_Side_Turret_1 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(2)->m_Frame;
+	//m_Broken_Side_Turret_2 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(1)->m_Frame;
+	//m_Broken_Side_Turret_3 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(4)->m_Frame;
+	//m_Broken_Side_Turret_4 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(7)->m_Frame;
+	//m_Broken_Side_One_Turret_1 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(3)->m_Frame;
+	//m_Broken_Side_One_Turret_2 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(5)->m_Frame;
+	//m_Broken_Side_One_Turret_3 = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->GetFrameInfoByIdx(6)->m_Frame;
 
 	//나머지  파츠들의 프레임관련 값들을 초기화해준다.
 	m_RadarTimer_1 = GetTickCount();
@@ -462,8 +480,10 @@ void CBoss::Render(HDC _hdc)
 	}
 	else
 	{
-		CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("DEAD_BOSS"))->
-			RenderAniSet(_hdc, 0, (float)m_CenterPoint.getX(), (float)m_CenterPoint.getY(), false);
+		auto aniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("DEAD_BOSS"));
+		aniSet->RenderAniSet(_hdc, 0, (float)m_CenterPoint.getX(), (float)m_CenterPoint.getY(), false);
+		/*CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("DEAD_BOSS"))->
+			RenderAniSet(_hdc, 0, (float)m_CenterPoint.getX(), (float)m_CenterPoint.getY(), false);*/
 	}
 }
 
@@ -497,54 +517,67 @@ void CBoss::RenderBody(HDC _hdc)
 	//m_BossTail = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet("BODY_PARTS")->GetFrameInfoByIdx(6)->m_Frame;	//배기구 부분.
 
 	m_BackWheelAni->RenderAniSet(_hdc, m_CurBackWheelFrame, (float)Wheel_B_Point.x, (float)Wheel_B_Point.y, false);
+	
+	auto aniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("BODY_PARTS"));
+	aniSet->RenderAniSet(_hdc, 14, (float)Ship_Body.x, (float)Ship_Body.y, false);
+	aniSet->RenderAniSet(_hdc, 0, (float)Ship_Head.x, (float)Ship_Head.y, false);
+	aniSet->RenderAniSet(_hdc, 6, (float)Ship_Tail.x, (float)Ship_Tail.y, false);
 
-	CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->
-		RenderAniSet(_hdc, 14, (float)Ship_Body.x, (float)Ship_Body.y, false);
+	//CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->
+	//	RenderAniSet(_hdc, 14, (float)Ship_Body.x, (float)Ship_Body.y, false);
 
-	CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->
-		RenderAniSet(_hdc, 0, (float)Ship_Head.x, (float)Ship_Head.y, false);
+	//CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->
+	//	RenderAniSet(_hdc, 0, (float)Ship_Head.x, (float)Ship_Head.y, false);
 
-	CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->
-		RenderAniSet(_hdc, 6, (float)Ship_Tail.x, (float)Ship_Tail.y, false);
-
+	//CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BODY_PARTS"))->
+	//	RenderAniSet(_hdc, 6, (float)Ship_Tail.x, (float)Ship_Tail.y, false);
 	m_FrontWheelAni->RenderAniSet(_hdc, m_CurFrontWheelFrame, (float)Wheel_F_Point.x, (float)Wheel_F_Point.y, false);
 }
 void CBoss::RenderBrokenParts(HDC _hdc)
 {
+	auto aniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("BROKEN_BODY_PARTS"));
+
 	if (Turret_1_Broken == true)
 	{
-		CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
-			RenderAniSet(_hdc, 2, (float)BrokenTurret_1.x, (float)BrokenTurret_1.y, false);
+		aniSet->RenderAniSet(_hdc, 2, (float)BrokenTurret_1.x, (float)BrokenTurret_1.y, false);
+		//CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
+		//	RenderAniSet(_hdc, 2, (float)BrokenTurret_1.x, (float)BrokenTurret_1.y, false);
 	}
 	if (Turret_2_Broken == true)
 	{
-		CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
-			RenderAniSet(_hdc, 1, (float)BrokenTurret_2.x, (float)BrokenTurret_2.y, false);
+		aniSet->RenderAniSet(_hdc, 1, (float)BrokenTurret_2.x, (float)BrokenTurret_2.y, false);
+		//CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
+		//	RenderAniSet(_hdc, 1, (float)BrokenTurret_2.x, (float)BrokenTurret_2.y, false);
 	}
 	if (Turret_3_Broken == true)
 	{
-		CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
-			RenderAniSet(_hdc, 4, (float)BrokenTurret_3.x, (float)BrokenTurret_3.y, false);
+		aniSet->RenderAniSet(_hdc, 4, (float)BrokenTurret_3.x, (float)BrokenTurret_3.y, false);
+		/*CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
+			RenderAniSet(_hdc, 4, (float)BrokenTurret_3.x, (float)BrokenTurret_3.y, false);*/
 	}
 	if (Turret_4_Broken == true)
 	{
-		CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
-			RenderAniSet(_hdc, 7, (float)BrokenTurret_4.x, (float)BrokenTurret_4.y, false);
+		aniSet->RenderAniSet(_hdc, 7, (float)BrokenTurret_4.x, (float)BrokenTurret_4.y, false);
+		/*CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
+			RenderAniSet(_hdc, 7, (float)BrokenTurret_4.x, (float)BrokenTurret_4.y, false);*/
 	}
 	if (OneTurret_1_Broken == true)
 	{
-		CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
-			RenderAniSet(_hdc, 3, (float)BrokenOneTurret_1.x, (float)BrokenOneTurret_1.y, false);
+		aniSet->RenderAniSet(_hdc, 3, (float)BrokenOneTurret_1.x, (float)BrokenOneTurret_1.y, false);
+		/*CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
+			RenderAniSet(_hdc, 3, (float)BrokenOneTurret_1.x, (float)BrokenOneTurret_1.y, false);*/
 	}
 	if (OneTurret_2_Broken == true)
 	{
-		CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
-			RenderAniSet(_hdc, 5, (float)BrokenOneTurret_2.x, (float)BrokenOneTurret_2.y, false);
+		aniSet->RenderAniSet(_hdc, 5, (float)BrokenOneTurret_2.x, (float)BrokenOneTurret_2.y, false);
+		/*CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
+			RenderAniSet(_hdc, 5, (float)BrokenOneTurret_2.x, (float)BrokenOneTurret_2.y, false);*/
 	}
 	if (OneTurret_3_Broken == true)
 	{
-		CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
-			RenderAniSet(_hdc, 6, (float)BrokenOneTurret_3.x, (float)BrokenOneTurret_3.y, false);
+		aniSet->RenderAniSet(_hdc, 6, (float)BrokenOneTurret_3.x, (float)BrokenOneTurret_3.y, false);
+		/*CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("BROKEN_BODY_PARTS"))->
+			RenderAniSet(_hdc, 6, (float)BrokenOneTurret_3.x, (float)BrokenOneTurret_3.y, false);*/
 	}
 }
 

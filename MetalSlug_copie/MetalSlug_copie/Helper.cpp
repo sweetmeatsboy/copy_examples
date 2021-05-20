@@ -62,7 +62,8 @@ void CHelper::Initialize(void)
 	m_N_Item = NULL;
 	isDead = false;
 
-	m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_T("PRISONER_HAING"));
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_NormalObjectAniSet_1"), _T("PRISONER_HAING"));
+	//m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_T("PRISONER_HAING"));
 	GiveFrame = 11;
 	m_PaternTimer = GetTickCount();
 	m_AniDelay = GetTickCount();
@@ -115,7 +116,8 @@ void CHelper::ProgressGive()
 			m_CurFrame = 0;
 			m_Phase = RUN;
 			m_Speed_X = -4;
-			m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_T("PRISONER_RUN"));
+			m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_NormalObjectAniSet_1"), _T("PRISONER_RUN"));
+			//m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_T("PRISONER_RUN"));
 		}
 	}
 
@@ -168,7 +170,8 @@ void CHelper::CheckCollision(CObj* _Something)
 			m_Speed_X = 0;
 			m_Phase = GIVE;
 			m_CurFrame = 0;
-			m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_T("PRISONER_GIVE"));
+			m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_NormalObjectAniSet_1"), _T("PRISONER_GIVE"));
+			//m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_T("PRISONER_GIVE"));
 			CDevice::GetInstance()->SoundPlay(CDevice::SFX_NPC_THANKYOU, 0);
 		}
 	}

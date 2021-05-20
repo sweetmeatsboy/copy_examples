@@ -185,7 +185,8 @@ void CReactionSoldier::CheckCollision(CObj* _Something)
 }
 void CReactionSoldier::SetAniName(const TCHAR* _Name)
 {
-	m_ReactionSoldierAni = CAniInfoMgr::Getinst()->GetNormal_Soldier_AniSet(_Name);
+	m_ReactionSoldierAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Nomal_Soldier_AniSet"), _Name);
+	//m_ReactionSoldierAni = CAniInfoMgr::Getinst()->GetNormal_Soldier_AniSet(_Name);
 	CurFrame = 0;
 	MaxFrameCount = m_ReactionSoldierAni->GetFrameCount();
 }

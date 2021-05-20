@@ -1,9 +1,10 @@
 #include "stdafx.h"
 void CWeaponBox::Initialize()
 {
-	TEST = CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("UIBOX_SET"));
-	TEST->GetFrameInfoByIdx(0);
-	m_Bullet =
+	auto aniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_UI_Set_1_AniSet"), _T("UIBOX_SET"));
+
+	//TEST = CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("UIBOX_SET"));
+	/*m_Bullet =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("UIBOX_SET"))->GetFrameInfoByIdx(0)->m_Frame;
 	m_Canon =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("UIBOX_SET"))->GetFrameInfoByIdx(2)->m_Frame;
@@ -11,6 +12,11 @@ void CWeaponBox::Initialize()
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("UIBOX_SET"))->GetFrameInfoByIdx(3)->m_Frame;
 	m_OutLineBox =
 		CAniInfoMgr::Getinst()->Get_UI_SET_1_AniSet(_T("UIBOX_SET"))->GetFrameInfoByIdx(4)->m_Frame;
+*/
+	m_Bullet = aniSet->GetFrameInfoByIdx(0)->m_Frame;
+	m_Canon = aniSet->GetFrameInfoByIdx(2)->m_Frame;
+	m_Bomb = aniSet->GetFrameInfoByIdx(3)->m_Frame;
+	m_OutLineBox = aniSet->GetFrameInfoByIdx(4)->m_Frame;
 
 	m_BoxPos_X = 0.f;
 	m_BoxPos_Y = 0.f;
@@ -106,45 +112,36 @@ void CWeaponBox::Progress()
 void CWeaponBox::Render(HDC _hdc)
 {
 	PatBlt(m_TempDC, 0, 0, WINCX, WINCY, RGB(255, 170, 204));
-	if (m_Player != NULL)
-	{
-		StretchBlt(_hdc,
-			int(m_BoxPos_X), int(m_BoxPos_Y),
-			int(m_Box_Width / 2), int(m_Box_Height),
-			CResourceMgr::GetInst()->GetBitDCMap("Atals_UI_Set_1")->GetMemDC(),
-			int(m_Bullet->GetFrameRect()->getPoint1().getX()),
-			int(m_Bullet->GetFrameRect()->getPoint1().getY()),
-			int(m_Bullet->FrameWidth), int(m_Bullet->FrameHeight),
-			SRCCOPY);
-		StretchBlt(_hdc,
-			int(m_BoxPos_X + m_Box_Width / 2), int(m_BoxPos_Y),
-			int(m_Box_Width / 2), int(m_Box_Height),
-			CResourceMgr::GetInst()->GetBitDCMap("Atals_UI_Set_1")->GetMemDC(),
-			int(m_Bomb->GetFrameRect()->getPoint1().getX()),
-			int(m_Bomb->GetFrameRect()->getPoint1().getY()),
-			int(m_Bomb->FrameWidth), int(m_Bomb->FrameHeight),
-			SRCCOPY);
-		StretchBlt(_hdc,
-			int(m_BoxPos_X), int(m_BoxPos_Y + m_Box_Height / 2),
-			int(m_Box_Width), int(m_Box_Height),
-			CResourceMgr::GetInst()->GetBitDCMap("Atals_UI_Set_1")->GetMemDC(),
-			int(m_OutLineBox->GetFrameRect()->getPoint1().getX()),
-			int(m_OutLineBox->GetFrameRect()->getPoint1().getY()),
-			int(m_OutLineBox->FrameWidth), int(m_OutLineBox->FrameHeight),
-			SRCCOPY);
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("WeaponBox"), _T("UI_WeaponBox_Player is NULL"), m_Player == nullptr))
+		return;
+	StretchBlt(_hdc,
+		int(m_BoxPos_X), int(m_BoxPos_Y),
+		int(m_Box_Width / 2), int(m_Box_Height),
+		CResourceMgr::GetInst()->GetBitDCMap("Atals_UI_Set_1")->GetMemDC(),
+		int(m_Bullet->GetFrameRect()->getPoint1().getX()),
+		int(m_Bullet->GetFrameRect()->getPoint1().getY()),
+		int(m_Bullet->FrameWidth), int(m_Bullet->FrameHeight),
+		SRCCOPY);
+	StretchBlt(_hdc,
+		int(m_BoxPos_X + m_Box_Width / 2), int(m_BoxPos_Y),
+		int(m_Box_Width / 2), int(m_Box_Height),
+		CResourceMgr::GetInst()->GetBitDCMap("Atals_UI_Set_1")->GetMemDC(),
+		int(m_Bomb->GetFrameRect()->getPoint1().getX()),
+		int(m_Bomb->GetFrameRect()->getPoint1().getY()),
+		int(m_Bomb->FrameWidth), int(m_Bomb->FrameHeight),
+		SRCCOPY);
+	StretchBlt(_hdc,
+		int(m_BoxPos_X), int(m_BoxPos_Y + m_Box_Height / 2),
+		int(m_Box_Width), int(m_Box_Height),
+		CResourceMgr::GetInst()->GetBitDCMap("Atals_UI_Set_1")->GetMemDC(),
+		int(m_OutLineBox->GetFrameRect()->getPoint1().getX()),
+		int(m_OutLineBox->GetFrameRect()->getPoint1().getY()),
+		int(m_OutLineBox->FrameWidth), int(m_OutLineBox->FrameHeight),
+		SRCCOPY);
 
 		//ÅºÃ¢ °¹¼ö ¹× ÆøÅº °¹¼ö ±×¸².
-
-
-
-
 		m_BulletCount.Render(_hdc);
 		m_BombCount.Render(_hdc);
-	}
-	else
-	{
-		MessageBox(g_hWnd, _T("UI_WeaponBox_Player is NULL"), _T("UI_Error"), MB_OK);
-	}
 }
 void CWeaponBox::Release()
 {

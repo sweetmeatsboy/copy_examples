@@ -76,14 +76,15 @@ int CPlayer::ProgressIdle()
 
 		m_Type = PLAYER_1;	//Eri
 
-		if (m_Type == PLAYER_1)
-			m_AppearAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("PLAYER_1_APPEARANCE"));
-		if (m_Type == PLAYER_2)
-			m_AppearAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("PLAYER_1_APPEARANCE"));
-		if (m_Type == PLAYER_3)
-			m_AppearAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("PLAYER_1_APPEARANCE"));
-		if (m_Type == PLAYER_4)
-			m_AppearAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("PLAYER_1_APPEARANCE"));
+		m_AppearAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_1_AniSet"), _T("PLAYER_1_APPEARANCE"));
+		//if (m_Type == PLAYER_1)
+		//	m_AppearAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("PLAYER_1_APPEARANCE"));
+		//if (m_Type == PLAYER_2)
+		//	m_AppearAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("PLAYER_1_APPEARANCE"));
+		//if (m_Type == PLAYER_3)
+		//	m_AppearAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("PLAYER_1_APPEARANCE"));
+		//if (m_Type == PLAYER_4)
+		//	m_AppearAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("PLAYER_1_APPEARANCE"));
 
 		return 0;
 	}
@@ -120,7 +121,8 @@ int CPlayer::ProgressPlay()
 	{
 		m_PlayerState = PLAYER_DEAD;
 		m_CurFrame = 0;
-		m_AppearAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("PLAYER_1_DEAD_LAND"));
+		m_AppearAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Player_1_AniSet"), _T("PLAYER_1_DEAD_LAND"));
+		//m_AppearAni = CAniInfoMgr::Getinst()->Getplayer_1_AniSet(_T("PLAYER_1_DEAD_LAND"));
 	}
 	return 0;
 

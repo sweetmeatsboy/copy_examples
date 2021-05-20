@@ -17,21 +17,27 @@ void CObjMgr::DestroyInst()
 }
 void CObjMgr::Progress()
 {
-	for (int y = 0; y < OBJ_END; ++y)
+	static int padding = 300;
+	int camLX = m_Cam->m_Left_X;
+	int camRX = m_Cam->m_Right_X;
+	int camLY = m_Cam->m_Left_Y;
+	int camRY = m_Cam->m_Right_Y;
+
+	for (int idx = 0; idx < OBJ_END; ++idx)
 	{
-		for (list<CObj*>::iterator pos = m_ObjList[y].begin();
-			pos != m_ObjList[y].end(); )
+		auto& objList = m_ObjList[idx];
+		for (list<CObj*>::iterator pos = objList.begin();
+			pos != objList.end(); )
 		{
-			if ((*pos)->GetCenterPoint().getX() > m_Cam->m_Left_X - 300
-				&& (*pos)->GetCenterPoint().getX() < m_Cam->m_Right_X + 300
-				&& (*pos)->GetCenterPoint().getY() > m_Cam->m_Left_Y - 200
-				&& (*pos)->GetCenterPoint().getY() < m_Cam->m_Right_Y + 200)
+			float x = (*pos)->GetCenterPoint().getX();
+			float y = (*pos)->GetCenterPoint().getY();
+			if (x > camLX - padding && x < camRX + padding && y > camLY - padding && y < camRY + padding)
 			{
-				if (1 == (*pos)->Progress())
+				if ((*pos)->Progress() == 1)
 				{
 					delete (*pos);
 					(*pos) = NULL;
-					pos = m_ObjList[y].erase(pos);
+					pos = objList.erase(pos);
 				}
 				else
 					++pos;

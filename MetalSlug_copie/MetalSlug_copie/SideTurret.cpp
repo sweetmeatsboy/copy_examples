@@ -25,7 +25,8 @@ void CSideTurret::Initialize(void)
 	m_Turret_State = Turret_IDLE;
 	m_TurretSFXAni = NULL;
 	//초기 터렛타입이 MID이므로 2_IDLE을 지정해준다.
-	m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_2_IDLE"));
+	m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_2_IDLE"));
+	//m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_2_IDLE"));
 	m_Parent = NULL;
 	m_Target = NULL;
 
@@ -58,10 +59,11 @@ void CSideTurret::ProgressIdle()
 		{	//IDle로 있어야 하는 시간이 지난 후.
 			m_dwPaternTimer = GetTickCount();
 			m_Turret_State = Turret_TURNING;
+			m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_TURNING"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_FIRING_SFX_0"));
 
-			m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_TURNING"));
-
-			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_SFX_0"));
+			/*m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_TURNING"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_SFX_0"));*/
 
 		}
 		if (CurFrame >= m_TurretAni->GetFrameCount())
@@ -92,18 +94,24 @@ void CSideTurret::ProgressFiring()
 
 		if (m_TurretType == TurretType_MID)
 		{
-			m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_MID"));
-			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_SFX_2"));
+			m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_FIRING_MID"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_FIRING_SFX_2"));
+			//m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_MID"));
+			//m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_SFX_2"));
 		}
 		if (m_TurretType == TurretType_LEFT)
 		{
-			m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_LEFT"));
-			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_SFX_1"));
+			m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_FIRING_LEFT"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_FIRING_SFX_1"));
+			/*m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_LEFT"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_SFX_1"));*/
 		}
 		if (m_TurretType == TurretType_RIGHT)
 		{
-			m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_RIGHT"));
-			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_SFX_3"));
+			m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_FIRING_RIGHT"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_FIRING_SFX_3"));
+			/*m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_RIGHT"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_SFX_3"));*/
 		}
 		CObj* m_Bullet = CObjFactory<CBossNomalBullet>::CreateObj((float)m_Posin_1.x, (float)m_Posin_1.y);
 		((CBossNomalBullet*)m_Bullet)->SetBulletType(1);
@@ -152,8 +160,12 @@ void CSideTurret::ProgressFire()
 			m_Turret_State = Turret_TURNING;
 			CalcDistanceTarget();
 			CurFrame = (int)m_TargetPosState;
-			m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_TURNING"));
-			m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_SFX_0"));
+
+			m_TurretAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_TURNING"));
+			m_TurretSFXAni = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_Boss_1_AniSet"), _T("SIDE_TURRET_FIRING_SFX_0"));
+
+			//m_TurretAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_TURNING"));
+			//m_TurretSFXAni = CAniInfoMgr::Getinst()->Get_Boss_1_AniSet(_T("SIDE_TURRET_FIRING_SFX_0"));
 		}
 	}
 }
@@ -226,12 +238,10 @@ void CSideTurret::CheckCollision(CObj* _Something)
 
 void CSideTurret::UpdatePos()
 {
-	if (m_Parent != NULL)
-	{
-		SetPos(m_Parent->GetInfo().fX + m_DeltaPos_X, m_Parent->GetInfo().fY + m_DeltaPos_Y);
-	}
-	else
-		MessageBox(g_hWnd, _T("SideTurret's Parent is NULL"), _T("Error"), MB_OK);
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("sideOneTurret"), _T("SideOneTurret's Parent is NULL"), m_Parent == nullptr))
+		return;
+
+	SetPos(m_Parent->GetInfo().fX + m_DeltaPos_X, m_Parent->GetInfo().fY + m_DeltaPos_Y);
 }
 
 void CSideTurret::SetTuerretState(TurretState _State)
@@ -252,77 +262,73 @@ void CSideTurret::SetParent(CObj* _Parent)
 }
 void CSideTurret::CalcDistanceTarget()
 {
-	if (m_Target != NULL)
-	{
-		int temp = abs(int(m_Target->GetInfo().fX - m_tInfo.fX));
-		m_TargetPosState = Pos_None;
-		if (m_Target->GetInfo().fX > m_tInfo.fX)
-		{		//플레이어가 내 오른쪽에 있는 경우 [TargetPos : 1 ~ 5]
-			if (temp >= 135)
-				m_TargetPosState = Pos_9;
-			if (temp < 135)
-				m_TargetPosState = Pos_8;
-			if (temp < 75)
-				m_TargetPosState = Pos_7;
-			if (temp < 45)
-				m_TargetPosState = Pos_6;
-			if (temp < 15)
-				m_TargetPosState = Pos_5;
-		}
-		else
-		{
-			if (temp >= 135)
-				m_TargetPosState = Pos_1;
-			if (temp < 135)
-				m_TargetPosState = Pos_3;
-			if (temp < 75)
-				m_TargetPosState = Pos_3;
-			if (temp < 45)
-				m_TargetPosState = Pos_4;
-			if (temp < 15)
-				m_TargetPosState = Pos_5;
-		}
-		float TempAngle;
-		if (m_TargetPosState >= Pos_1 && m_TargetPosState < Pos_4)
-		{
-			m_TurretType = TurretType_LEFT;
-			m_fAngle = 120.f;
-			TempAngle = 135.f;
-		}
-		if (m_TargetPosState >= Pos_4 && m_TargetPosState < Pos_7)
-		{
-			m_TurretType = TurretType_MID;
-			m_fAngle = 95.f;
-			TempAngle = 85.f;
-		}
-		if (m_TargetPosState >= Pos_7 && m_TargetPosState < Pos_None)
-		{
-			m_TurretType = TurretType_RIGHT;
-			m_fAngle = 50.f;
-			TempAngle = 65.f;
-		}
-		m_Posin_1.x = int(m_tInfo.fX + m_PosinLength * cosf(m_fAngle*PI / 180.f));
-		m_Posin_1.y = int(m_tInfo.fY - m_PosinLength * sinf(m_fAngle*PI / 180.f));
-
-		m_Posin_2.x = int(m_tInfo.fX + m_PosinLength * cosf(TempAngle*PI / 180.f));
-		m_Posin_2.y = int(m_tInfo.fY - m_PosinLength * sinf(TempAngle*PI / 180.f));
-
-		if ((m_TargetPosState == Pos_1) || (m_TargetPosState == Pos_2))
-			CurSFXFrame = 0;
-		if ((m_TargetPosState == Pos_3))
-			CurSFXFrame = 1;
-		if ((m_TargetPosState == Pos_4))
-			CurSFXFrame = 2;
-		if ((m_TargetPosState == Pos_5))
-			CurSFXFrame = 3;
-		if ((m_TargetPosState == Pos_6))
-			CurSFXFrame = 4;
-		if ((m_TargetPosState == Pos_7))
-			CurSFXFrame = 5;
-		if ((m_TargetPosState == Pos_8) || (m_TargetPosState == Pos_9))
-			CurSFXFrame = 6;
-
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("sideTurret"), _T("Target is NULL"), m_Target == nullptr))
+		return;
+	int temp = abs(int(m_Target->GetInfo().fX - m_tInfo.fX));
+	m_TargetPosState = Pos_None;
+	if (m_Target->GetInfo().fX > m_tInfo.fX)
+	{		//플레이어가 내 오른쪽에 있는 경우 [TargetPos : 1 ~ 5]
+		if (temp >= 135)
+			m_TargetPosState = Pos_9;
+		if (temp < 135)
+			m_TargetPosState = Pos_8;
+		if (temp < 75)
+			m_TargetPosState = Pos_7;
+		if (temp < 45)
+			m_TargetPosState = Pos_6;
+		if (temp < 15)
+			m_TargetPosState = Pos_5;
 	}
 	else
-		MessageBox(g_hWnd, _T("Target is NULL"), _T("CSideTurret"), MB_OK);
+	{
+		if (temp >= 135)
+			m_TargetPosState = Pos_1;
+		if (temp < 135)
+			m_TargetPosState = Pos_3;
+		if (temp < 75)
+			m_TargetPosState = Pos_3;
+		if (temp < 45)
+			m_TargetPosState = Pos_4;
+		if (temp < 15)
+			m_TargetPosState = Pos_5;
+	}
+	float TempAngle;
+	if (m_TargetPosState >= Pos_1 && m_TargetPosState < Pos_4)
+	{
+		m_TurretType = TurretType_LEFT;
+		m_fAngle = 120.f;
+		TempAngle = 135.f;
+	}
+	if (m_TargetPosState >= Pos_4 && m_TargetPosState < Pos_7)
+	{
+		m_TurretType = TurretType_MID;
+		m_fAngle = 95.f;
+		TempAngle = 85.f;
+	}
+	if (m_TargetPosState >= Pos_7 && m_TargetPosState < Pos_None)
+	{
+		m_TurretType = TurretType_RIGHT;
+		m_fAngle = 50.f;
+		TempAngle = 65.f;
+	}
+	m_Posin_1.x = int(m_tInfo.fX + m_PosinLength * cosf(m_fAngle*PI / 180.f));
+	m_Posin_1.y = int(m_tInfo.fY - m_PosinLength * sinf(m_fAngle*PI / 180.f));
+
+	m_Posin_2.x = int(m_tInfo.fX + m_PosinLength * cosf(TempAngle*PI / 180.f));
+	m_Posin_2.y = int(m_tInfo.fY - m_PosinLength * sinf(TempAngle*PI / 180.f));
+
+	if ((m_TargetPosState == Pos_1) || (m_TargetPosState == Pos_2))
+		CurSFXFrame = 0;
+	if ((m_TargetPosState == Pos_3))
+		CurSFXFrame = 1;
+	if ((m_TargetPosState == Pos_4))
+		CurSFXFrame = 2;
+	if ((m_TargetPosState == Pos_5))
+		CurSFXFrame = 3;
+	if ((m_TargetPosState == Pos_6))
+		CurSFXFrame = 4;
+	if ((m_TargetPosState == Pos_7))
+		CurSFXFrame = 5;
+	if ((m_TargetPosState == Pos_8) || (m_TargetPosState == Pos_9))
+		CurSFXFrame = 6;
 }

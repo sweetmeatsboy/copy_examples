@@ -3,7 +3,7 @@
 class CWeaponBox
 {
 private:
-	CAniDCSet* TEST;
+	//CAniDCSet* TEST;
 	CTextBox m_BulletCount;
 	CTextBox m_BombCount;
 	CPlayer* m_Player;

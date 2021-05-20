@@ -5,7 +5,8 @@ const RTTI CFrontGroundObject::m_Rtti("CFrontGroundObject", CObj::m_Rtti);
 
 void CFrontGroundObject::SetObjectAni(const TCHAR* _AniName)
 {
-	m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_AniName);
+	m_Ani = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_NormalObjectAniSet_1"), _AniName);
+	//m_Ani = CAniInfoMgr::Getinst()->Get_Nomal_OBJ_1_AniSet(_AniName);
 }
 void CFrontGroundObject::Initialize(void)
 {

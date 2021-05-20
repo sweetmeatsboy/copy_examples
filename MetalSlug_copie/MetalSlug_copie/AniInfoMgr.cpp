@@ -68,44 +68,38 @@ void CAniInfoMgr::LoadAniInfo_Boss_1()
 	temp->LoadData(_T("../SpriteInfo/Boss_1.spt"));
 	//아틀라스맵 소환!
 	CBitmapDC* Boss_Atlas = CResourceMgr::GetInst()->GetBitDCMap("Atals_Boss_1");
-	if (NULL == Boss_Atlas)
-	{
-		MessageBox(g_hWnd, _T("Atals_Boss_1 Load Failed"), _T("Error"), MB_OK);
+	
+	auto pop = ErrorMgr::GetInst().ErrBoxPopupT(_T("AniDCSet_GetFrameInfoByIdx"), _T("Error"), Boss_Atlas == nullptr);
+	if (pop)
 		return;
-	}
+
 	//우선 프레임을 얻어온다.
-
-	for (unsigned int h = 0;
-		h < temp->m_vScenes.size(); ++h)
+	int sceneCnt = temp->m_vScenes.size();
+	int aniCnt = temp->m_vAnimates.size();
+	for (int i = 0; i < sceneCnt; i++)
 	{
-		m_FrameList[h] = new CFrameDC(
-			temp->m_vScenes.at(h)->m_rcMain,
-			temp->m_vScenes.at(h)->m_ptMain,
-			temp->m_dwBackColor);
-	}	//이렇게 하면 툴에서 따온 인덱스 번호대로 맵에 HDC들이 저장될것이다.
-
-	for (unsigned int n = 0; n < temp->m_vAnimates.size(); ++n)
+		auto scene = temp->m_vScenes.at(i);
+		auto *frame = new CFrameDC(scene->m_rcMain,scene->m_ptMain
+			,temp->m_dwBackColor);
+		m_FrameList[i] = frame;
+	}
+	for (int n = 0; n < aniCnt; ++n)
 	{
 		CAniDCSet* tempAni = new CAniDCSet();
-
-		for (unsigned int y = 0; y < temp->m_vAnimates.at(n)->getCntScene();
-			++y)
+		int cutCnt = temp->m_vAnimates.at(n)->getCntScene();
+		for (int y = 0; y < cutCnt; ++y)
 		{
-
 			tempAni->AddFrameInfo(
 				m_FrameList[temp->m_vAnimates.at(n)->getIdxOfScene(y)->m_dwIndex],
 				temp->m_vAnimates.at(n)->getIdxOfScene(y)->m_dwOutputTime);
 		}
 		m_AniSetDCList[n] = tempAni;
-		m_AniSetDCList[n]->SetAtlasMapName("Atals_Boss_1");
-		m_AniSetDCList[n]->SetScale(2.5f, 2.5f);
+		tempAni->SetAtlasMapName("Atals_Boss_1");
+		tempAni->SetScale(2.5f, 2.5f);
 	}
 
-
 	SetAniDCSetMap(m_Boss_1_AniSet, 0, _T("BIG_CANON_APPERENCE"));
-
 	SetAniDCSetMap(m_Boss_1_AniSet,1, _T("BIG_CANON_TARGETTING"));
-
 	SetAniDCSetMap(m_Boss_1_AniSet,2, _T("BIG_CANON_ANGLE_1"));
 	SetAniDCSetMap(m_Boss_1_AniSet,3, _T("BIG_CANON_ANGLE_2"));
 	SetAniDCSetMap(m_Boss_1_AniSet,4, _T("BIG_CANON_ANGLE_3"));
@@ -171,11 +165,10 @@ void CAniInfoMgr::LoadAniInfo_ETC_Effect()
 	temp->LoadData(_T("../SpriteInfo/Effect_Explosiom.spt"));
 	//아틀라스맵 소환!
 	CBitmapDC* Player_Weapon_Atlas = CResourceMgr::GetInst()->GetBitDCMap("Atals_ECT_Effect");
-	if (NULL == Player_Weapon_Atlas)
-	{
-		MessageBox(g_hWnd, _T("Atals_ECT_Effect Load Failed"), _T("Error"), MB_OK);
+	auto pop = ErrorMgr::GetInst().ErrBoxPopupT(_T("AniDCSet_GetFrameInfoByIdx"), _T("Error"), Player_Weapon_Atlas == nullptr);
+	if (pop)
 		return;
-	}
+
 	//우선 프레임을 얻어온다.
 	for (unsigned int h = 0;
 		h < temp->m_vScenes.size(); ++h)
@@ -233,11 +226,11 @@ void CAniInfoMgr::LoadAniInfo_EnemyWeapon()
 	temp->LoadData(_T("../SpriteInfo/E_Weapon.spt"));
 	//아틀라스맵 소환!
 	CBitmapDC* Player_Weapon_Atlas = CResourceMgr::GetInst()->GetBitDCMap("Atals_Enemy_Weapon");
-	if (NULL == Player_Weapon_Atlas)
-	{
-		MessageBox(g_hWnd, _T("Atals_Enemy_Weapon Load Failed"), _T("Error"), MB_OK);
+	
+	auto pop = ErrorMgr::GetInst().ErrBoxPopupT(_T("Atlas Error"), _T("Enemy_Weapon"), Player_Weapon_Atlas == nullptr);
+	if (pop)
 		return;
-	}
+
 	//우선 프레임을 얻어온다.
 	for (unsigned int h = 0;
 		h < temp->m_vScenes.size(); ++h)
@@ -293,14 +286,14 @@ void CAniInfoMgr::LoadAniInfo_UI_Set_1()
 	temp->LoadData(_T("../SpriteInfo/UISet_1.spt"));
 	//아틀라스맵 소환!
 	CBitmapDC* Player_Weapon_Atlas = CResourceMgr::GetInst()->GetBitDCMap("Atals_UI_Set_1");
-	if (NULL == Player_Weapon_Atlas)
-	{
-		PopMsgBox(_T("Atals_UI_Set_1 Load Failed"), _T("Error"));
+	
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("AniInfoMgr"), _T("Atals_UI_Set_1 Load Failed"), Player_Weapon_Atlas == nullptr))
 		return;
-	}
+
+	int sceneCnt = temp->m_vScenes.size();
+	int aniCnt = temp->m_vAnimates.size();
 	//우선 프레임을 얻어온다.
-	for (unsigned int h = 0;
-		h < temp->m_vScenes.size(); ++h)
+	for (int h = 0; h < sceneCnt; ++h)
 	{
 		m_FrameList[h] = new CFrameDC(
 			temp->m_vScenes.at(h)->m_rcMain,
@@ -308,21 +301,47 @@ void CAniInfoMgr::LoadAniInfo_UI_Set_1()
 			temp->m_dwBackColor);
 	}	//이렇게 하면 툴에서 따온 인덱스 번호대로 맵에 HDC들이 저장될것이다.
 
-	for (unsigned int n = 0; n < temp->m_vAnimates.size(); ++n)
+	for (unsigned int n = 0; n < aniCnt; ++n)
 	{
 		CAniDCSet* tempAni = new CAniDCSet();
-		for (unsigned int y = 0; y < temp->m_vAnimates.at(n)->getCntScene();
-			++y)
+		auto aniFrameCnt = temp->m_vAnimates.at(n)->getCntScene();
+		for (int y = 0; y < aniFrameCnt;++y)
 		{
-			tempAni->AddFrameInfo(
-				m_FrameList[temp->m_vAnimates.at(n)->getIdxOfScene(y)->m_dwIndex],
-				temp->m_vAnimates.at(n)->getIdxOfScene(y)->m_dwOutputTime);
+			auto tag = temp->m_vAnimates.at(n)->getIdxOfScene(y);
+			auto targetFrame = m_FrameList[tag->m_dwIndex];
+			tempAni->AddFrameInfo(targetFrame, tag->m_dwOutputTime);
 		}
 		m_AniSetDCList[n] = tempAni;
 		m_AniSetDCList[n]->SetAtlasMapName("Atals_UI_Set_1");
 		m_AniSetDCList[n]->SetScale(2.f, 2.f);
 
 	}	//모든 애니메이트들의 안에 있는 인덱스들을 모조리 저장한다.
+
+	////우선 프레임을 얻어온다.
+	//for (unsigned int h = 0;
+	//	h < temp->m_vScenes.size(); ++h)
+	//{
+	//	m_FrameList[h] = new CFrameDC(
+	//		temp->m_vScenes.at(h)->m_rcMain,
+	//		temp->m_vScenes.at(h)->m_ptMain,
+	//		temp->m_dwBackColor);
+	//}	//이렇게 하면 툴에서 따온 인덱스 번호대로 맵에 HDC들이 저장될것이다.
+
+	//for (unsigned int n = 0; n < temp->m_vAnimates.size(); ++n)
+	//{
+	//	CAniDCSet* tempAni = new CAniDCSet();
+	//	for (unsigned int y = 0; y < temp->m_vAnimates.at(n)->getCntScene();
+	//		++y)
+	//	{
+	//		tempAni->AddFrameInfo(
+	//			m_FrameList[temp->m_vAnimates.at(n)->getIdxOfScene(y)->m_dwIndex],
+	//			temp->m_vAnimates.at(n)->getIdxOfScene(y)->m_dwOutputTime);
+	//	}
+	//	m_AniSetDCList[n] = tempAni;
+	//	m_AniSetDCList[n]->SetAtlasMapName("Atals_UI_Set_1");
+	//	m_AniSetDCList[n]->SetScale(2.f, 2.f);
+
+	//}	//모든 애니메이트들의 안에 있는 인덱스들을 모조리 저장한다.
 
 	SetAniDCSetMap(m_UI_Set_1_AniSet, 0, _T("SMALL_SILVER"));
 	SetAniDCSetMap(m_UI_Set_1_AniSet, 1, _T("NOMAL_SILVER"));
@@ -351,11 +370,10 @@ void CAniInfoMgr::LoadAniInfo_NomalOBJ_1()
 	temp->LoadData(_T("../SpriteInfo/NomalObjectList_1.spt"));
 	//아틀라스맵 소환!
 	CBitmapDC* Player_Weapon_Atlas = CResourceMgr::GetInst()->GetBitDCMap("Atlas_NomalOBJ_1");
-	if (NULL == Player_Weapon_Atlas)
-	{
-		PopMsgBox(_T("Atlas_NomalOBJ_1 Load Failed"), _T("Error"));
+	
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("AniInfoMgr"), _T("Atlas_NomalOBJ_1 Load Failed"), Player_Weapon_Atlas == nullptr))
 		return;
-	}
+
 	//우선 프레임을 얻어온다.
 	for (unsigned int h = 0;
 		h < temp->m_vScenes.size(); ++h)
@@ -425,11 +443,11 @@ void CAniInfoMgr::LoadAniInfo_ETC_Item()
 	temp->LoadData(_T("../SpriteInfo/Item.spt"));
 	//아틀라스맵 소환!
 	CBitmapDC* Player_Weapon_Atlas = CResourceMgr::GetInst()->GetBitDCMap("Atals_ECT_Item");
-	if (NULL == Player_Weapon_Atlas)
-	{
-		MessageBox(g_hWnd, _T("Player_Weapon_Atlas Load Failed"), _T("Error"), MB_OK);
+	
+	auto pop = ErrorMgr::GetInst().ErrBoxPopupT(_T("Atlas Error"), _T("Player_Weapon"), Player_Weapon_Atlas == nullptr);
+	if (pop)
 		return;
-	}
+
 	//우선 프레임을 얻어온다.
 	for (unsigned int h = 0;
 		h < temp->m_vScenes.size(); ++h)
@@ -488,12 +506,11 @@ void CAniInfoMgr::LoadAniInfo_PlayerWeapon()
 	temp->LoadData(_T("../SpriteInfo/PlayerWeapon.spt"));
 	//아틀라스맵 소환!
 	CBitmapDC* Player_Weapon_Atlas = CResourceMgr::GetInst()->GetBitDCMap("Atals_Player_Weapon");
-	if (NULL == Player_Weapon_Atlas)
-	{
 
-		MessageBox(g_hWnd, _T("Player_Weapon_Atlas Load Failed"), _T("Error"), MB_OK);
+	auto pop = ErrorMgr::GetInst().ErrBoxPopupT(_T("Atlas Error"), _T("Player_Weapon"), Player_Weapon_Atlas == nullptr);
+	if (pop)
 		return;
-	}
+
 	//우선 프레임을 얻어온다.
 	for (unsigned int h = 0;
 		h < temp->m_vScenes.size(); ++h)
@@ -556,12 +573,11 @@ void CAniInfoMgr::LoadAniInfo_NomalSoldier()
 	temp->LoadData(_T("../SpriteInfo/Enemy_RebelSoldier.spt"));
 	//아틀라스맵 소환!
 	CBitmapDC* Player_Weapon_Atlas = CResourceMgr::GetInst()->GetBitDCMap("Atals_Rebel_Nomal");
-	if (NULL == Player_Weapon_Atlas)
-	{
-
-		MessageBox(g_hWnd, _T("ExtraSoldier_Atlas Load Failed"), _T("Error"), MB_OK);
+	
+	auto pop = ErrorMgr::GetInst().ErrBoxPopupT(_T("Atlas Error"), _T("ExtraSoldier"), Player_Weapon_Atlas == nullptr);
+	if (pop)
 		return;
-	}
+	
 	//우선 프레임을 얻어온다.
 	for (unsigned int h = 0;
 		h < temp->m_vScenes.size(); ++h)
@@ -650,12 +666,11 @@ void CAniInfoMgr::LoadAniInfo_Player_1()
 	temp->LoadData(_T("../SpriteInfo/Player_1.spt"));
 	//아틀라스맵 소환!
 	CBitmapDC* Player_1_Atlas = CResourceMgr::GetInst()->GetBitDCMap("Atals_Player_1");
-	if (NULL == Player_1_Atlas)
-	{
 
-		MessageBox(g_hWnd, _T("Player_1_Atlas Load Failed"), _T("Error"), MB_OK);
+	auto pop = ErrorMgr::GetInst().ErrBoxPopupT(_T("Atlas Error"), _T("Player_1"), Player_1_Atlas == nullptr);
+	if (pop)
 		return;
-	}
+	
 	//우선 프레임을 얻어온다.
 	for (unsigned int h = 0;
 		h < temp->m_vScenes.size(); ++h)
@@ -729,71 +744,18 @@ void CAniInfoMgr::LoadAniInfo_Player_1()
 	temp = NULL;
 }
 
-void CAniInfoMgr::PopMsgBox(const TCHAR* _title, const TCHAR* _contents)
+CAniDCSet* CAniInfoMgr::GetAniDCSet(const _TCHAR* _setName, const TCHAR* _name)
 {
-	MessageBox(g_hWnd, _title, _contents, MB_OK);
-}
+	auto pop = ErrorMgr::GetInst().ErrBoxPopupT(_T("AniSetMap Not Exist"), _name, aniSetMap.find(_setName) == aniSetMap.end());
+	if (pop)
+		return nullptr;
 
-
-CAniDCSet* CAniInfoMgr::GetEnemy_Weapon_AniSet(const TCHAR*  _Name)
-{
-	if (m_Enemy_Weapon_AniSet[_Name] == NULL)
-		PopMsgBox(_T("해당 이름의 AniDCSet이 존재하지 않습니다."), _Name);
-	return m_Enemy_Weapon_AniSet[_Name];
+	AniDCSetMap& _aniSet = *aniSetMap[_setName];
+	pop = ErrorMgr::GetInst().ErrBoxPopupT(_T("AniDCSet Not Exist"), _name, _aniSet[_name] == nullptr);
+	if (pop)
+		return nullptr;
+	return _aniSet[_name];
 }
-CAniDCSet* CAniInfoMgr::Getplayer_1_AniSet(const TCHAR* _Name)
-{
-	if (m_Player_1_AniSet[_Name] == NULL)
-		PopMsgBox(_T("해당 이름의 AniDCSet이 존재하지 않습니다."), _Name);
-	return m_Player_1_AniSet[_Name];
-}
-
-CAniDCSet* CAniInfoMgr::GetPlayer_Weapon_AniSet(const TCHAR* _Name)
-{
-	if (m_Player_Weapon_AniSet[_Name] == NULL)
-		PopMsgBox(_T("해당 이름의 AniDCSet이 존재하지 않습니다."), _Name);
-	return m_Player_Weapon_AniSet[_Name];
-}
-CAniDCSet* CAniInfoMgr::GetNormal_Soldier_AniSet(const TCHAR* _Name)
-{
-	if (m_Nomal_Soldier_AniSet[_Name] == NULL)
-		PopMsgBox(_T("해당 이름의 AniDCSet이 존재하지 않습니다."), _Name);
-	return m_Nomal_Soldier_AniSet[_Name];
-}
-CAniDCSet* CAniInfoMgr::Get_ETC_Item_AniSet(const TCHAR* _Name)
-{
-	if (m_ETC_Item_AniSet[_Name] == NULL)
-		PopMsgBox(_T("해당 이름의 AniDCSet이 존재하지 않습니다."), _Name);
-	return m_ETC_Item_AniSet[_Name];
-}
-
-CAniDCSet* CAniInfoMgr::Get_ETC_Effect_AniSet(const TCHAR* _Name)
-{
-	if (m_ETC_Effect_AniSet[_Name] == NULL)
-		PopMsgBox(_T("해당 이름의 AniDCSet이 존재하지 않습니다."), _Name);
-	return m_ETC_Effect_AniSet[_Name];
-}
-
-CAniDCSet* CAniInfoMgr::Get_UI_SET_1_AniSet(const TCHAR* _Name)
-{
-	if (m_UI_Set_1_AniSet[_Name] == NULL)
-		PopMsgBox(_T("해당 이름의 AniDCSet이 존재하지 않습니다."), _Name);
-	return m_UI_Set_1_AniSet[_Name];
-}
-CAniDCSet* CAniInfoMgr::Get_Boss_1_AniSet(const TCHAR* _Name)
-{
-	if (m_Boss_1_AniSet[_Name] == NULL)
-		PopMsgBox(_T("해당 이름의 AniDCSet이 존재하지 않습니다."), _Name);
-	return m_Boss_1_AniSet[_Name];
-}
-
-CAniDCSet* CAniInfoMgr::Get_Nomal_OBJ_1_AniSet(const TCHAR* _Name)
-{
-	if (m_NormalObjectAniSet_1[_Name] == NULL)
-		PopMsgBox(_T("해당 이름의 AniDCSet이 존재하지 않습니다."), _Name);
-	return m_NormalObjectAniSet_1[_Name];
-}
-
 
 void CAniInfoMgr::LoadResource_Animation()
 {

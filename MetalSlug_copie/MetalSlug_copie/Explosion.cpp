@@ -47,54 +47,65 @@ void CExplosion::Release(void)
 }
 void CExplosion::SetExplosionName(const char* _Name)
 {
-
 	if (strcmp(_Name, "Explosion_Nomal") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Nomal"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_Nomal"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Nomal"));
 	}
 	if (strcmp(_Name, "Explosion_Middle") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Middle"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_Middle"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Middle"));
 	}
 	if (strcmp(_Name, "Explosion_Max") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Max"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_Max"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Max"));
 	}
 	if (strcmp(_Name, "Explosion_Bomb") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Bomb"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_Bomb"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Bomb"));
 	}
 	if (strcmp(_Name, "Explosion_Bomb_Max") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Bomb_Max"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_Bomb_Max"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Bomb_Max"));
 	}
 	if (strcmp(_Name, "Explosion_Mine") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Mine"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_Mine"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Mine"));
 	}
 	if (strcmp(_Name, "Explosion_Mine_2") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Mine_2"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_Mine_2"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Mine_2"));
 	}
 	if (strcmp(_Name, "Explosion_BallingBomb") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_BallingBomb"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_BallingBomb"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_BallingBomb"));
 	}
 	if (strcmp(_Name, "Explosion_FireBomb") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_FireBomb"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_FireBomb"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_FireBomb"));
 	}
 	if (strcmp(_Name, "Explosion_FireBomb_Max") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_FireBomb_Max"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_FireBomb_Max"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_FireBomb_Max"));
 	}
 	if (strcmp(_Name, "Explosion_FireBomb_Finished") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_FireBomb_Finished"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_FireBomb_Finished"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_FireBomb_Finished"));
 	}
 	if (strcmp(_Name, "Explosion_Huge") == 0)
 	{
-		m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Huge"));
+		m_AniSet = CAniInfoMgr::Getinst()->GetAniDCSet(_T("m_ETC_Effect_AniSet"), _T("Explosion_Huge"));
+		//m_AniSet = CAniInfoMgr::Getinst()->Get_ETC_Effect_AniSet(_T("Explosion_Huge"));
 	}
 
 	m_AniTimer = GetTickCount();

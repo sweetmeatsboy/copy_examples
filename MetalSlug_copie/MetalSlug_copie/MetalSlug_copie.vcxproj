@@ -75,12 +75,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -156,6 +158,7 @@
     <ClInclude Include="DeadSoldier.h" />
     <ClInclude Include="Door.h" />
     <ClInclude Include="EnemyBullet.h" />
+    <ClInclude Include="ErrorMgr.h" />
     <ClInclude Include="Explosion.h" />
     <ClInclude Include="ExtraSoldier.h" />
     <ClInclude Include="E_Bakgeok.h" />
@@ -164,6 +167,7 @@
     <ClInclude Include="E_Bomb_2.h" />
     <ClInclude Include="E_Mine.h" />
     <ClInclude Include="E_NomalBullet.h" />
+    <ClInclude Include="FileMgr.h" />
     <ClInclude Include="FrontGroundObject.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="HPBar.h" />
@@ -236,6 +240,7 @@
     <ClCompile Include="DeadSoldier.cpp" />
     <ClCompile Include="Door.cpp" />
     <ClCompile Include="EnemyBullet.cpp" />
+    <ClCompile Include="ErrorMgr.cpp" />
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="ExtraSoldier.cpp" />
     <ClCompile Include="E_Bakgeok.cpp" />
@@ -244,6 +249,7 @@
     <ClCompile Include="E_Bomb_2.cpp" />
     <ClCompile Include="E_Mine.cpp" />
     <ClCompile Include="E_NomalBullet.cpp" />
+    <ClCompile Include="FileMgr.cpp" />
     <ClCompile Include="FrontGroundObject.cpp" />
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="HPBar.cpp" />

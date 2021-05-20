@@ -20,7 +20,8 @@ CDevice::~CDevice(void)
 }
 void CDevice::PopMsgBox(const TCHAR* _contents, const TCHAR* _title)
 {
-	MessageBox(g_hWnd, _contents, _title, MB_OK);
+	ErrorMgr::GetInst().ErrBoxPopupT(_title, _contents, true);
+	//MessageBox(g_hWnd, _contents, _title, MB_OK);
 }
 
 HRESULT CDevice::Init(void)
@@ -128,7 +129,7 @@ HRESULT CDevice::LoadWave(const TCHAR* pFileName)
 	if (FAILED(m_pSound->CreateSoundBuffer(&BuffInfo, &SoundBuff
 		, NULL)))
 	{
-		PopMsgBox(_T("사운드버퍼생성실패"), _T(""));
+		PopMsgBox(pFileName, _T("사운드버퍼생성실패"));
 		return E_FAIL;
 	}
 

@@ -27,23 +27,20 @@ void CCollisionMgr::DestroyInst()
 
 void CCollisionMgr::Progress()
 {
-	if (CObjMgr::GetInst()->GetObjList(OBJ_PLAYER)->empty() == false)
-	{
-		Getinst()->m_Player = CObjMgr::GetInst()->GetObjList(OBJ_PLAYER)->front();
-		CheckPlayerWithEnemyBullet();
-		CheckPlayerWithEnemy();
-		CheckPlayerWithItem();
-		CheckPlayerWithSlug();
-		CheckEnemyWithPlayerBullet();
-		CheckNPCWithPlayer();
-		CheckPlayerWithNomalObj();
-		CheckNomalObjWithPlayerBullet();
-	}
-	else
-	{
-		MessageBox(g_hWnd, _T("Player 미지정 오류"), _T("CollisionMgr"), MB_OK);
+	auto no_err = CObjMgr::GetInst()->GetObjList(OBJ_PLAYER)->empty() == false;
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("CollisionMgr's progress"), _T("Player 미지정 오류"), no_err == false))
 		return;
-	}
+
+	Getinst()->m_Player = CObjMgr::GetInst()->GetObjList(OBJ_PLAYER)->front();
+	CheckPlayerWithEnemyBullet();
+	CheckPlayerWithEnemy();
+	CheckPlayerWithItem();
+	CheckPlayerWithSlug();
+	CheckEnemyWithPlayerBullet();
+	CheckNPCWithPlayer();
+	CheckPlayerWithNomalObj();
+	CheckNomalObjWithPlayerBullet();
+	return;
 }
 void CCollisionMgr::Release()
 {

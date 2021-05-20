@@ -139,7 +139,7 @@ void CStage_1::Progress()
 			m_Cam.Setfocus(int(mX  - WINCX / 2.f), 570.f);
 	}
 
-	if (mX  >= 5900.f)
+	if (mX  >= 5900.f &&mX <7110.f)
 	{
 		if (monsterListEmpty == false)	//备埃 郴 葛电 利焙 贸府
 			m_Cam.Setfocus(5900, 70);

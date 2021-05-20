@@ -25,7 +25,7 @@ void CObjMgr::Progress()
 
 	for (int idx = 0; idx < OBJ_END; ++idx)
 	{
-		auto objList = m_ObjList[idx];
+		auto& objList = m_ObjList[idx];
 		for (list<CObj*>::iterator pos = objList.begin();
 			pos != objList.end(); )
 		{

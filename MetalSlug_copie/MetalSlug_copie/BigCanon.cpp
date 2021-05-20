@@ -191,7 +191,7 @@ void CBigCanon::SetParent(CObj* _Parent)
 }
 void CBigCanon::CalcDistanceTarget()
 {
-	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("CalcDistanceTarget"), _T("CSideTurret is NULL"), m_Target != nullptr))
+	if (ErrorMgr::GetInst().ErrBoxPopupT(_T("CalcDistanceTarget"), _T("CSideTurret is NULL"), m_Target == nullptr))
 		return ;
 
 	int temp = abs(int(m_Target->GetInfo().fX - m_tInfo.fX));

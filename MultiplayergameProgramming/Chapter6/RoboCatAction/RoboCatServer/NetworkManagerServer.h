@@ -56,3 +56,9 @@ public:
 	ClientProxyPtr GetClientProxy(int _pid) const;
 };
 
+inline GameObjectPtr NetworkManagerServer::RegisterAndReturn(GameObject* _p)
+{
+	GameObjectPtr ret(_p);
+	RegisterGameObject(ret);
+	return ret;
+}

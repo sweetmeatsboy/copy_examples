@@ -31,3 +31,6 @@ using namespace std;
 #include "Server.h"
 
 #include "ClientProxy.h"
+#include "MouseServer.h"
+#include "RoboCatServer.h"
+#include "YarnServer.h"

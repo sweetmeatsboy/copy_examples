@@ -20,6 +20,10 @@ public:
 		const Vector3& GetColor() const { return mColor; }
 		uint32_t GetPlayerId() const { return mPlayerId; }
 		const string& GetPlayerName() const { return mPlayerName; }
+		const string& GetFormattedNameScore() const
+		{
+			return mFormattedNameScore;
+		}
 		int GetScore() const { return mScore; }
 		void SetScore(int _score);
 		bool Write(OutputMemoryBitStream& _in) const;

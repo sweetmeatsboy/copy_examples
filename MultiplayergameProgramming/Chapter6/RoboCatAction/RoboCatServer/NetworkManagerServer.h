@@ -31,9 +31,16 @@ private:
 	void SendStatePacketToClient(ClientProxyPtr _cp);
 	void WriteLAstMoveTimestampDirty(OutputMemoryBitStream& _in, ClientProxyPtr _cp);
 
+<<<<<<< HEAD
 	void handleClientDisconnected(ClientProxyPtr _cp);
 
 	int GetNetworkId();
+=======
+	void HandleInputPacket(ClientProxyPtr _cp, InputMemoryBitStream& _in);
+	void HandleClientDisconnected(ClientProxyPtr _cp);
+
+	int GetNewNetworkId();
+>>>>>>> MultiplayergameProgramming
 public:
 	static NetworkManagerServer* sInstance;
 
@@ -55,3 +62,12 @@ public:
 	ClientProxyPtr GetClientProxy(int _pid) const;
 };
 
+<<<<<<< HEAD
+=======
+inline GameObjectPtr NetworkManagerServer::RegisterAndReturn(GameObject* _p)
+{
+	GameObjectPtr ret(_p);
+	RegisterGameObject(ret);
+	return ret;
+}
+>>>>>>> MultiplayergameProgramming

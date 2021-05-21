@@ -16,7 +16,7 @@ string StringUtils::GetCommandLineArg(int _idx)
 	return string();
 }
 
-string StringUtils::Sprint(const char* _format, ...)
+string StringUtils::Sprintf(const char* _format, ...)
 {
 	static char temp[4096];
 	va_list args;

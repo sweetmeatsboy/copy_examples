@@ -38,7 +38,11 @@ public:
 		return mReplicationManagerServer;
 	}
 
+<<<<<<< HEAD
 	const MoveList& GetUnprodessedMoveList() const
+=======
+	const MoveList& GetUnprocessedMoveList() const
+>>>>>>> MultiplayergameProgramming
 	{
 		return mUnprocessedMoveList;
 	}

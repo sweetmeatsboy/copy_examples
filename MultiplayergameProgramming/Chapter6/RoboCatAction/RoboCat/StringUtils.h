@@ -5,7 +5,7 @@ namespace StringUtils
 {
 	string GetCommandLineArg(int _idx);
 
-	string Sprint(const char* _format, ...);
+	string Sprintf(const char* _format, ...);
 
 	void Log(const char* _format);
 	void Log(const char* _format, ...);

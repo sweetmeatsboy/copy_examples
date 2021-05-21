@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -84,6 +84,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>..\SDL\include;..\;..\RoboCat\</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>RoboCatClientPCH.h</PrecompiledHeaderFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -108,6 +111,9 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>..\SDL\include;..\;..\RoboCat\</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>RoboCatClientPCH.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -115,6 +121,42 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="GraphicsDriver.h" />
+    <ClInclude Include="HUD.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="MouseClient.h" />
+    <ClInclude Include="NetworkManagerClient.h" />
+    <ClInclude Include="RenderManager.h" />
+    <ClInclude Include="ReplicationManagerClient.h" />
+    <ClInclude Include="RoboCatClient.h" />
+    <ClInclude Include="RoboCatClientPCH.h" />
+    <ClInclude Include="SpriteComponent.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="WindowManager.h" />
+    <ClInclude Include="YarnClient.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="GraphicsDriver.cpp" />
+    <ClCompile Include="HUD.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="MouseClient.cpp" />
+    <ClCompile Include="NetworkManagerClient.cpp" />
+    <ClCompile Include="RenderManager.cpp" />
+    <ClCompile Include="ReplicationManagerClient.cpp" />
+    <ClCompile Include="RoboCatClient.cpp" />
+    <ClCompile Include="SpriteComponent.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="WindowManager.cpp" />
+    <ClCompile Include="YarnClient.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RoboCat\RoboCat.vcxproj">
+      <Project>{a636d961-faee-4403-b220-d7582a29b2ae}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

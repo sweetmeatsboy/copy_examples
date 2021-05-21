@@ -30,4 +30,11 @@ using namespace std;
 #include "ReplicationManagerServer.h"
 #include "Server.h"
 
+<<<<<<< HEAD
 #include "ClientProxy.h"
+=======
+#include "ClientProxy.h"
+#include "MouseServer.h"
+#include "RoboCatServer.h"
+#include "YarnServer.h"
+>>>>>>> MultiplayergameProgramming

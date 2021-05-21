@@ -30,6 +30,18 @@
     <ClInclude Include="Server.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+<<<<<<< HEAD
+=======
+    <ClInclude Include="MouseServer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="RoboCatServer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="YarnServer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+>>>>>>> MultiplayergameProgramming
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ServerMain.cpp">
@@ -50,5 +62,17 @@
     <ClCompile Include="Server.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="MouseServer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="RoboCatServer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="YarnServer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+>>>>>>> MultiplayergameProgramming
   </ItemGroup>
 </Project>

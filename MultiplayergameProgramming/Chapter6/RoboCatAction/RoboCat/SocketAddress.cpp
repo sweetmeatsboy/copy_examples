@@ -7,7 +7,7 @@ string SocketAddress::ToString() const
 	char dest[128];
 	InetNtop(s->sin_family, const_cast<in_addr*>(&s->sin_addr)
 		, dest, sizeof(dest));
-	return StringUtils::Sprint("%s:%d", dest, ntohs(s->sin_port));
+	return StringUtils::Sprintf("%s:%d", dest, ntohs(s->sin_port));
 #endif // _WIN32
 
 }

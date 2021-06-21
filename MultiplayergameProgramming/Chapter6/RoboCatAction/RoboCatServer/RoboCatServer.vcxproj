@@ -122,20 +122,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ClientProxy.h" />
-<<<<<<< HEAD
-    <ClInclude Include="NetworkManagerServer.h" />
-    <ClInclude Include="ReplicationManagerServer.h" />
-    <ClInclude Include="RoboCatServerPCH.h" />
-    <ClInclude Include="Server.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ClientProxy.cpp" />
-    <ClCompile Include="NetworkManagerServer.cpp" />
-    <ClCompile Include="ReplicationManagerServer.cpp" />
-    <ClCompile Include="RoboCatServerPCH.cpp" />
-    <ClCompile Include="Server.cpp" />
-    <ClCompile Include="ServerMain.cpp" />
-=======
     <ClInclude Include="MouseServer.h" />
     <ClInclude Include="NetworkManagerServer.h" />
     <ClInclude Include="ReplicationManagerServer.h" />
@@ -154,7 +140,6 @@
     <ClCompile Include="Server.cpp" />
     <ClCompile Include="ServerMain.cpp" />
     <ClCompile Include="YarnServer.cpp" />
->>>>>>> MultiplayergameProgramming
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RoboCat\RoboCat.vcxproj">
